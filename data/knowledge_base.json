@@ -743,7 +743,7 @@
       "document_id": "doc_001",
       "type": "warranty",
       "title": "Rheem Water Heater Warranty PDF",
-      "file_path": "/documents/warranties/rheem_water_heater_warranty.pdf",
+      "file_path": "/documents/rheem_water_heater_warranty.pdf",
       "linked_entities": [
         { "entity_type": "asset", "entity_id": "asset_water_heater" },
         { "entity_type": "warranty", "entity_id": "warr_001" }
@@ -753,7 +753,7 @@
       "document_id": "doc_002",
       "type": "invoice",
       "title": "Water Heater Repair Invoice 2024",
-      "file_path": "/documents/invoices/water_heater_repair_2024.pdf",
+      "file_path": "/documents/water_heater_repair_2024.pdf",
       "linked_entities": [
         { "entity_type": "asset", "entity_id": "asset_water_heater" },
         { "entity_type": "maintenance_event", "entity_id": "maint_001" },
@@ -764,7 +764,7 @@
       "document_id": "doc_003",
       "type": "estimate",
       "title": "Water Heater Replacement Estimate 2026",
-      "file_path": "/documents/estimates/water_heater_replacement_estimate_2026.pdf",
+      "file_path": "/documents/water_heater_replacement_estimate_2026.pdf",
       "linked_entities": [
         { "entity_type": "asset", "entity_id": "asset_water_heater" },
         { "entity_type": "maintenance_event", "entity_id": "maint_002" }
@@ -774,7 +774,7 @@
       "document_id": "doc_004",
       "type": "manual",
       "title": "Carrier Furnace Manual",
-      "file_path": "/documents/manuals/carrier_furnace_manual.pdf",
+      "file_path": "/documents/carrier_furnace_manual.pdf",
       "linked_entities": [
         { "entity_type": "asset", "entity_id": "asset_furnace" }
       ]
@@ -783,14 +783,14 @@
       "document_id": "doc_005",
       "type": "utility_bill",
       "title": "Electric Bill March 2026",
-      "file_path": "/documents/utility_bills/electric_bill_2026_03.pdf",
+      "file_path": "/documents/electric_bill_2026_03.pdf",
       "linked_entities": []
     },
     {
       "document_id": "doc_006",
       "type": "email",
       "title": "Plumber Follow-Up Email",
-      "file_path": "/documents/emails/plumber_followup_2026_03_10.eml",
+      "file_path": "/documents/plumber_followup_2026_03_10.pdf",
       "linked_entities": [
         { "entity_type": "service_provider", "entity_id": "prov_001" },
         { "entity_type": "maintenance_event", "entity_id": "maint_002" }
@@ -800,7 +800,7 @@
       "document_id": "doc_007",
       "type": "invoice",
       "title": "Washer Drain Repair Invoice 2025",
-      "file_path": "/documents/invoices/washer_drain_repair_2025.pdf",
+      "file_path": "/documents/washer_drain_repair_2025.pdf",
       "linked_entities": [
         { "entity_type": "asset", "entity_id": "asset_washing_machine" },
         { "entity_type": "maintenance_event", "entity_id": "maint_004" },
@@ -812,7 +812,7 @@
       "document_id": "doc_008",
       "type": "manual",
       "title": "Samsung Washer Manual",
-      "file_path": "/documents/manuals/samsung_washer_manual.pdf",
+      "file_path": "/documents/samsung_washer_manual.pdf",
       "linked_entities": [
         { "entity_type": "asset", "entity_id": "asset_washing_machine" }
       ]
