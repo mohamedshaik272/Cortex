@@ -1,824 +1,821 @@
 {
   "property": {
-    "address": "1847 Meadowbrook Heights Dr",
-    "city": "Charlottesville",
-    "state": "VA",
-    "zip": "22901",
-    "year_built": 2003,
-    "sqft": 2450,
-    "type": "single_family",
-    "bedrooms": 4,
-    "bathrooms": 2.5,
-    "purchase_date": "2018-06-15",
-    "purchase_price": 385000
+    "property_id": "home_001",
+    "address": {
+      "street": "123 Maple Grove Lane",
+      "city": "Fairfax",
+      "state": "VA",
+      "zip": "22030"
+    },
+    "home_type": "single_family",
+    "year_built": 2004,
+    "square_feet": 2450
   },
-  "location": {
-    "lat": 38.0406,
-    "lng": -78.5569,
-    "zip": "22901",
-    "county": "Albemarle",
-    "utility_info": {
-      "sewer": "city_sewer",
-      "water": "city_water",
-      "water_provider": "Rivanna Water & Sewer Authority",
-      "electric_provider": "Dominion Energy",
-      "gas_provider": "Virginia Natural Gas"
-    }
-  },
-  "insurance": {
-    "provider": "State Farm",
-    "policy_number": "SF-92-4481-7723",
-    "agent_name": "Patricia Henley",
-    "agent_phone": "(434) 555-0192",
-    "annual_premium": 1840,
-    "deductible": 1500,
-    "coverage": {
-      "dwelling": 420000,
-      "personal_property": 210000,
-      "liability": 300000,
-      "additional_living_expense": 84000,
-      "water_backup": 10000
-    },
-    "renewal_date": "2026-06-15"
-  },
-  "systems": {
-    "hvac": [
-      {
-        "id": "hvac-001",
-        "name": "Central Air Conditioner",
-        "brand": "Carrier",
-        "model": "24ACC636A003",
-        "serial_number": "3217G45891",
-        "type": "central_ac",
-        "capacity": "3 ton",
-        "seer_rating": 16,
-        "install_date": "2017-04-22",
-        "expected_lifespan_years": 15,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2027-04-22",
-          "covers": "compressor and coil (parts only, labor not included)",
-          "provider": "Carrier Corporation"
-        },
-        "last_service": {
-          "date": "2025-09-14",
-          "provider_id": "prov-002",
-          "description": "Annual maintenance and inspection. Refrigerant levels normal. Coils cleaned but technician noted early signs of wear on evaporator coil — recommended monitoring.",
-          "cost": 189
-        },
-        "status": "operational",
-        "location_in_home": "Outdoor unit south side, air handler in basement",
-        "notes": "Evaporator coil showing wear as of Sept 2025 service. Monitor closely next cooling season."
-      },
-      {
-        "id": "hvac-002",
-        "name": "Gas Furnace",
-        "brand": "Rheem",
-        "model": "R801TA075421MSA",
-        "serial_number": "W5C1934872",
-        "type": "gas_furnace",
-        "capacity": "75,000 BTU",
-        "efficiency": "80% AFUE",
-        "install_date": "2017-04-22",
-        "expected_lifespan_years": 20,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2037-04-22",
-          "covers": "heat exchanger (20-year), all other parts (10-year, expired 2027)",
-          "provider": "Rheem Manufacturing"
-        },
-        "last_service": {
-          "date": "2025-10-28",
-          "provider_id": "prov-002",
-          "description": "Pre-season furnace tune-up. Replaced air filter, checked ignition and gas valve. All operating within spec.",
-          "cost": 149
-        },
-        "status": "operational",
-        "location_in_home": "Basement utility room",
-        "notes": "Installed at the same time as the AC unit. Heat exchanger warranty runs through 2037."
-      }
-    ],
-    "plumbing": [
-      {
-        "id": "plumb-001",
-        "name": "Water Heater",
-        "brand": "A.O. Smith",
-        "model": "ProLine XE GPVT-50"
-        ,
-        "serial_number": "AOSP14082247",
-        "type": "tank_gas",
-        "capacity": "50 gallon",
-        "energy_factor": 0.62,
-        "install_date": "2014-08-15",
-        "expected_lifespan_years": 10,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2020-08-15",
-          "covers": "tank and parts (6-year limited warranty)",
-          "provider": "A.O. Smith Corporation"
-        },
-        "last_service": {
-          "date": "2024-03-10",
-          "provider_id": "prov-001",
-          "description": "Flushed sediment, inspected anode rod — rod is heavily corroded and should be replaced. Homeowner declined replacement at that time.",
-          "cost": 125
-        },
-        "status": "operational_with_concerns",
-        "location_in_home": "Basement utility room",
-        "notes": "Unit is 11 years old, past expected lifespan of 10 years. Warranty expired Aug 2020. Anode rod needs replacement. Making intermittent rumbling noises as of early 2026 — likely sediment buildup. Energy efficiency has degraded."
-      },
-      {
-        "id": "plumb-002",
-        "name": "Sump Pump",
-        "brand": "Wayne",
-        "model": "CDU980E",
-        "serial_number": "WN20190341",
-        "type": "submersible_sump_pump",
-        "capacity": "3/4 HP",
-        "install_date": "2019-11-02",
-        "expected_lifespan_years": 10,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2024-11-02",
-          "covers": "defects in materials and workmanship (5-year)",
-          "provider": "Wayne Water Systems"
-        },
-        "last_service": {
-          "date": "2025-04-18",
-          "provider_id": "prov-001",
-          "description": "Tested float switch and check valve. Cleaned intake screen. Operating normally.",
-          "cost": 95
-        },
-        "status": "operational",
-        "location_in_home": "Basement sump pit",
-        "notes": "Battery backup unit (Wayne ESP25) installed alongside. Backup battery last replaced Feb 2024."
-      }
-    ],
-    "electrical": [
-      {
-        "id": "elec-001",
-        "name": "Main Electrical Panel",
-        "brand": "Square D",
-        "model": "Homeline HOM2040M200PC",
-        "serial_number": "SQD200340178",
-        "type": "main_breaker_panel",
-        "capacity": "200 amp",
-        "install_date": "2003-06-01",
-        "expected_lifespan_years": 40,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2028-06-01",
-          "covers": "defects in materials and workmanship (25-year residential)",
-          "provider": "Schneider Electric (Square D)"
-        },
-        "last_service": {
-          "date": "2023-07-20",
-          "provider_id": "prov-003",
-          "description": "Full panel inspection. All breakers tested, connections tightened. No signs of overheating or corrosion. Panel in good condition for its age.",
-          "cost": 275
-        },
-        "status": "operational",
-        "location_in_home": "Basement east wall",
-        "notes": "Original to the house. 40-space panel with 6 open slots available for future circuits."
-      },
-      {
-        "id": "elec-002",
-        "name": "Smoke and CO Detectors",
-        "brand": "Kidde",
-        "model": "Firex KN-COSM-IBA",
-        "serial_number": "various",
-        "type": "hardwired_smoke_co_detector",
-        "capacity": "7 units throughout home",
-        "install_date": "2021-03-15",
-        "expected_lifespan_years": 10,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2031-03-15",
-          "covers": "defects in materials and workmanship (10-year)",
-          "provider": "Kidde Safety"
-        },
-        "last_service": {
-          "date": "2025-11-01",
-          "provider_id": null,
-          "description": "Homeowner tested all 7 units. All functioning. Batteries replaced in all units.",
-          "cost": 35
-        },
-        "status": "operational",
-        "location_in_home": "One per bedroom (4), hallway, kitchen, basement",
-        "notes": "All 7 units replaced in 2021 after previous units reached end of life. Next full replacement due ~2031."
-      }
-    ],
-    "appliances": [
-      {
-        "id": "appl-001",
-        "name": "Refrigerator",
-        "brand": "Samsung",
-        "model": "RF28R7351SR",
-        "serial_number": "SAM0B7E23941",
-        "type": "french_door_refrigerator",
-        "capacity": "28 cu ft",
-        "install_date": "2020-01-10",
-        "expected_lifespan_years": 13,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2025-01-10",
-          "covers": "parts and labor (1-year, expired), compressor (10-year parts only through 2030)",
-          "provider": "Samsung Electronics"
-        },
-        "last_service": {
-          "date": "2024-08-22",
-          "provider_id": "prov-004",
-          "description": "Ice maker stopped producing. Technician replaced the ice maker assembly and water inlet valve. Fixed.",
-          "cost": 340
-        },
-        "status": "operational",
-        "location_in_home": "Kitchen",
-        "notes": "Ice maker was repaired Aug 2024. Water filter replaced every 6 months — last replaced Dec 2025."
-      },
-      {
-        "id": "appl-002",
-        "name": "Dishwasher",
-        "brand": "Bosch",
-        "model": "SHPM88Z75N",
-        "serial_number": "BSH800Z42817",
-        "type": "built_in_dishwasher",
-        "capacity": "16 place settings",
-        "install_date": "2021-11-20",
-        "expected_lifespan_years": 10,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2026-11-20",
-          "covers": "parts and labor for manufacturing defects (5-year limited on select components)",
-          "provider": "BSH Home Appliances"
-        },
-        "last_service": {
-          "date": null,
-          "provider_id": null,
-          "description": "No service history — unit has been trouble-free since installation.",
-          "cost": 0
-        },
-        "status": "operational",
-        "location_in_home": "Kitchen",
-        "notes": "Bosch 800 Series. Very quiet operation. No issues since install."
-      },
-      {
-        "id": "appl-003",
-        "name": "Washing Machine",
-        "brand": "LG",
-        "model": "WM4000HWA",
-        "serial_number": "LG309A84571",
-        "type": "front_load_washer",
-        "capacity": "4.5 cu ft",
-        "install_date": "2020-01-10",
-        "expected_lifespan_years": 11,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2022-01-10",
-          "covers": "parts and labor (2-year), motor (10-year parts only through 2030)",
-          "provider": "LG Electronics"
-        },
-        "last_service": {
-          "date": "2025-06-05",
-          "provider_id": "prov-004",
-          "description": "Drain pump making noise during spin cycle. Technician cleared debris from pump filter. No parts needed.",
-          "cost": 150
-        },
-        "status": "operational",
-        "location_in_home": "Second floor laundry closet",
-        "notes": "Clean the pump filter quarterly to prevent recurrence of drain noise issue."
-      }
-    ],
-    "exterior": [
-      {
-        "id": "ext-001",
-        "name": "Garage Door Opener",
-        "brand": "LiftMaster",
-        "model": "87504",
-        "serial_number": "LM875049912",
-        "type": "belt_drive_garage_opener",
-        "capacity": "3/4 HP, battery backup",
-        "install_date": "2022-05-18",
-        "expected_lifespan_years": 15,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2037-05-18",
-          "covers": "motor and belt (lifetime), parts (5-year), battery (2-year, expired)",
-          "provider": "LiftMaster (Chamberlain Group)"
-        },
-        "last_service": {
-          "date": "2025-05-10",
-          "provider_id": null,
-          "description": "Homeowner lubricated chain and tracks, tested safety sensors. Operating smoothly.",
-          "cost": 0
-        },
-        "status": "operational",
-        "location_in_home": "Attached two-car garage",
-        "notes": "Has MyQ smart connectivity. Battery backup last tested May 2025. Backup battery may need replacement soon (approaching 3 years)."
-      },
-      {
-        "id": "ext-002",
-        "name": "Roof",
-        "brand": "GAF",
-        "model": "Timberline HDZ",
-        "serial_number": null,
-        "type": "architectural_asphalt_shingle",
-        "capacity": "30-year rated shingles",
-        "install_date": "2003-06-01",
-        "expected_lifespan_years": 25,
-        "warranty": {
-          "type": "manufacturer_limited",
-          "expires": "2028-06-01",
-          "covers": "manufacturing defects (prorated after 10 years). Original GAF warranty, non-transferable portion expired at sale.",
-          "provider": "GAF Materials"
-        },
-        "last_service": {
-          "date": "2025-03-20",
-          "provider_id": "prov-005",
-          "description": "Annual inspection. A few shingles lifting on north face. Minor granule loss consistent with age. Flashing around chimney in good shape. Estimated 3-5 years of remaining useful life.",
-          "cost": 0
-        },
-        "status": "aging",
-        "location_in_home": "Roof",
-        "notes": "Original roof from 2003 — now 22 years old on a 25-year rated product. Plan for replacement within 3-5 years. Get quotes in 2027."
-      }
-    ]
-  },
-  "providers": [
+  "systems": [
     {
-      "id": "prov-001",
-      "name": "Blue Ridge Plumbing",
-      "contact_name": "Mike Hargrove",
-      "phone": "(434) 555-0147",
-      "email": "service@blueridgeplumbing.com",
-      "trade": "plumbing",
-      "service_area": "Charlottesville and Albemarle County",
-      "licensed": true,
-      "license_number": "VA-PLB-2270418",
-      "notes": "Reliable, fair pricing, good communication. Our go-to plumber.",
-      "jobs": [
-        {
-          "date": "2024-03-10",
-          "description": "Water heater flush and anode rod inspection",
-          "cost": 125,
-          "asset_id": "plumb-001",
-          "rating": 5,
-          "notes": "Thorough inspection. Honest about the anode rod condition without being pushy."
-        },
-        {
-          "date": "2023-08-14",
-          "description": "Fixed leaking kitchen faucet, replaced cartridge",
-          "cost": 185,
-          "asset_id": null,
-          "rating": 5,
-          "notes": "Same-day service. Very professional."
-        },
-        {
-          "date": "2025-04-18",
-          "description": "Sump pump annual inspection and cleaning",
-          "cost": 95,
-          "asset_id": "plumb-002",
-          "rating": 5,
-          "notes": "Quick and efficient. Explained everything clearly."
-        }
-      ]
+      "system_id": "sys_hvac",
+      "name": "Central HVAC",
+      "type": "hvac"
     },
     {
-      "id": "prov-002",
-      "name": "Shenandoah Valley HVAC",
-      "contact_name": "Tom Beckett",
-      "phone": "(434) 555-0283",
-      "email": "appointments@shenvalleyhvac.com",
-      "trade": "hvac",
-      "service_area": "Charlottesville, Waynesboro, Staunton",
-      "licensed": true,
-      "license_number": "VA-HVC-1198344",
-      "notes": "Used for all HVAC work since 2019. Consistent quality.",
-      "jobs": [
-        {
-          "date": "2025-09-14",
-          "description": "AC annual maintenance and inspection",
-          "cost": 189,
-          "asset_id": "hvac-001",
-          "rating": 5,
-          "notes": "Thorough inspection. Flagged the evaporator coil wear proactively."
-        },
-        {
-          "date": "2025-10-28",
-          "description": "Furnace pre-season tune-up",
-          "cost": 149,
-          "asset_id": "hvac-002",
-          "rating": 5,
-          "notes": "Bundled with AC service for discount on second visit."
-        },
-        {
-          "date": "2024-07-03",
-          "description": "Emergency AC repair — capacitor replacement",
-          "cost": 285,
-          "asset_id": "hvac-001",
-          "rating": 4,
-          "notes": "Came out same day despite it being a holiday week. Slightly higher price for emergency call but fair."
-        }
-      ]
+      "system_id": "sys_plumbing",
+      "name": "Main Plumbing",
+      "type": "plumbing"
     },
     {
-      "id": "prov-003",
-      "name": "Piedmont Electric Services",
-      "contact_name": "Dana Williams",
-      "phone": "(434) 555-0391",
-      "email": "info@piedmontelectric.net",
-      "trade": "electrical",
-      "service_area": "Central Virginia",
-      "licensed": true,
-      "license_number": "VA-ELE-3345021",
-      "notes": "Good for larger electrical jobs. Used once for panel inspection.",
-      "jobs": [
-        {
-          "date": "2023-07-20",
-          "description": "Full electrical panel inspection and breaker testing",
-          "cost": 275,
-          "asset_id": "elec-001",
-          "rating": 4,
-          "notes": "Thorough but took longer than quoted. Good final report."
-        }
-      ]
+      "system_id": "sys_water",
+      "name": "Water-Using Appliances",
+      "type": "appliances"
     },
     {
-      "id": "prov-004",
-      "name": "Keswick Appliance Repair",
-      "contact_name": "Jerry Tate",
-      "phone": "(434) 555-0478",
-      "email": "jerry@keswickappliance.com",
-      "trade": "appliance_repair",
-      "service_area": "Albemarle County",
-      "licensed": true,
-      "license_number": "VA-CON-5582019",
-      "notes": "Decent for appliance work but the washer repair felt overpriced for just clearing a filter.",
-      "jobs": [
-        {
-          "date": "2024-08-22",
-          "description": "Samsung refrigerator ice maker repair — replaced ice maker assembly and water inlet valve",
-          "cost": 340,
-          "asset_id": "appl-001",
-          "rating": 4,
-          "notes": "Fixed the issue. Parts were expensive but labor was reasonable."
-        },
-        {
-          "date": "2025-06-05",
-          "description": "LG washer drain pump noise — cleared debris from pump filter",
-          "cost": 150,
-          "asset_id": "appl-003",
-          "rating": 2,
-          "notes": "Charged $150 to clear lint from a filter — felt like something I could have done myself. Won't call for simple issues again."
-        }
-      ]
-    },
-    {
-      "id": "prov-005",
-      "name": "Jefferson Roofing & Exteriors",
-      "contact_name": "Carlos Mendes",
-      "phone": "(434) 555-0512",
-      "email": "carlos@jeffersonroofing.com",
-      "trade": "roofing",
-      "service_area": "Charlottesville metro area",
-      "licensed": true,
-      "license_number": "VA-ROF-7891234",
-      "notes": "Did a free annual inspection. Planning to get a quote from them when it's time for roof replacement.",
-      "jobs": [
-        {
-          "date": "2025-03-20",
-          "description": "Annual roof inspection — visual and drone assessment",
-          "cost": 0,
-          "asset_id": "ext-002",
-          "rating": 5,
-          "notes": "Complimentary inspection. Honest assessment with photos. No pressure to replace immediately."
-        }
-      ]
+      "system_id": "sys_electrical",
+      "name": "Electrical System",
+      "type": "electrical"
     }
   ],
-  "financials": [
+  "assets": [
     {
-      "date": "2024-01-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 142,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_water_heater",
+      "system_id": "sys_plumbing",
+      "name": "Basement Water Heater",
+      "category": "water_heater",
+      "make": "Rheem",
+      "model": "XE40M09EL55U1",
+      "serial_number": "RH12345678",
+      "install_date": "2015-03-14",
+      "expected_lifespan_years": 10,
+      "warranty_id": "warr_001",
+      "maintenance_event_ids": ["maint_001", "maint_002"],
+      "document_ids": ["doc_001", "doc_002", "doc_003"]
     },
     {
-      "date": "2024-02-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 138,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_furnace",
+      "system_id": "sys_hvac",
+      "name": "Gas Furnace",
+      "category": "furnace",
+      "make": "Carrier",
+      "model": "59SC5B080E17",
+      "serial_number": "CA99887766",
+      "install_date": "2018-10-02",
+      "expected_lifespan_years": 15,
+      "warranty_id": "warr_002",
+      "maintenance_event_ids": ["maint_003"],
+      "document_ids": ["doc_004"]
     },
     {
-      "date": "2024-03-10",
-      "category": "service",
-      "description": "Water heater flush and anode rod inspection",
-      "amount": 125,
-      "system": "plumbing",
-      "provider_id": "prov-001",
-      "asset_id": "plumb-001"
+      "asset_id": "asset_garbage_disposal",
+      "system_id": "sys_plumbing",
+      "name": "Kitchen Garbage Disposal",
+      "category": "garbage_disposal",
+      "make": "InSinkErator",
+      "model": "Badger 5",
+      "serial_number": "GD11223344",
+      "install_date": "2021-09-12",
+      "expected_lifespan_years": 8,
+      "warranty_id": null,
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-03-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 129,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_washing_machine",
+      "system_id": "sys_water",
+      "name": "Laundry Washing Machine",
+      "category": "washing_machine",
+      "make": "Samsung",
+      "model": "WF45T6000AW",
+      "serial_number": "WM55667788",
+      "install_date": "2022-11-03",
+      "expected_lifespan_years": 10,
+      "warranty_id": "warr_003",
+      "maintenance_event_ids": ["maint_004"],
+      "document_ids": ["doc_007", "doc_008"]
     },
     {
-      "date": "2024-04-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 118,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_dryer",
+      "system_id": "sys_electrical",
+      "name": "Laundry Dryer",
+      "category": "dryer",
+      "make": "Samsung",
+      "model": "DVE45T6000W",
+      "serial_number": "DR33445566",
+      "install_date": "2022-11-03",
+      "expected_lifespan_years": 12,
+      "warranty_id": "warr_004",
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-05-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 134,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_microwave",
+      "system_id": "sys_electrical",
+      "name": "Over-the-Range Microwave",
+      "category": "microwave",
+      "make": "GE",
+      "model": "JVM6175SKSS",
+      "serial_number": "MW22334455",
+      "install_date": "2020-08-14",
+      "expected_lifespan_years": 9,
+      "warranty_id": null,
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-06-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 187,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_garage_door_opener",
+      "system_id": "sys_electrical",
+      "name": "Garage Door Opener",
+      "category": "garage_door_opener",
+      "make": "Chamberlain",
+      "model": "B4505T",
+      "serial_number": "GDOP998877",
+      "install_date": "2021-05-20",
+      "expected_lifespan_years": 12,
+      "warranty_id": "warr_005",
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-07-03",
-      "category": "service",
-      "description": "Emergency AC repair — capacitor replacement",
-      "amount": 285,
-      "system": "hvac",
-      "provider_id": "prov-002",
-      "asset_id": "hvac-001"
+      "asset_id": "asset_water_softener",
+      "system_id": "sys_plumbing",
+      "name": "Whole-Home Water Softener",
+      "category": "water_softener",
+      "make": "GE",
+      "model": "GXSH40V",
+      "serial_number": "WS44556677",
+      "install_date": "2017-04-18",
+      "expected_lifespan_years": 12,
+      "warranty_id": null,
+      "maintenance_event_ids": ["maint_005"],
+      "document_ids": []
     },
     {
-      "date": "2024-07-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 210,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_bathroom_exhaust_fan",
+      "system_id": "sys_electrical",
+      "name": "Primary Bath Exhaust Fan",
+      "category": "exhaust_fan",
+      "make": "Broan-NuTone",
+      "model": "AE110",
+      "serial_number": "EF88776655",
+      "install_date": "2019-07-09",
+      "expected_lifespan_years": 10,
+      "warranty_id": null,
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-08-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 198,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_smoke_detector_hall",
+      "system_id": "sys_electrical",
+      "name": "Upstairs Hall Smoke Detector",
+      "category": "smoke_detector",
+      "make": "Kidde",
+      "model": "i12060",
+      "serial_number": "SD11224466",
+      "install_date": "2023-01-15",
+      "expected_lifespan_years": 10,
+      "warranty_id": null,
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-08-22",
-      "category": "service",
-      "description": "Samsung refrigerator ice maker repair",
-      "amount": 340,
-      "system": "appliances",
-      "provider_id": "prov-004",
-      "asset_id": "appl-001"
+      "asset_id": "asset_water_leak_sensor_basement",
+      "system_id": "sys_plumbing",
+      "name": "Basement Leak Sensor",
+      "category": "leak_sensor",
+      "make": "Govee",
+      "model": "H5054",
+      "serial_number": "LS77889900",
+      "install_date": "2024-02-10",
+      "expected_lifespan_years": 5,
+      "warranty_id": null,
+      "maintenance_event_ids": [],
+      "document_ids": []
     },
     {
-      "date": "2024-09-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 176,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "asset_id": "asset_ev_charger",
+      "system_id": "sys_electrical",
+      "name": "Garage EV Charger",
+      "category": "ev_charger",
+      "make": "ChargePoint",
+      "model": "Home Flex",
+      "serial_number": "EV12349876",
+      "install_date": "2025-06-22",
+      "expected_lifespan_years": 10,
+      "warranty_id": "warr_006",
+      "maintenance_event_ids": [],
+      "document_ids": []
+    }
+  ],
+  "warranties": [
+    {
+      "warranty_id": "warr_001",
+      "asset_id": "asset_water_heater",
+      "provider_name": "Rheem",
+      "coverage_start": "2015-03-14",
+      "coverage_end": "2025-03-14",
+      "registration_status": "registered"
     },
     {
-      "date": "2024-10-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 145,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "warranty_id": "warr_002",
+      "asset_id": "asset_furnace",
+      "provider_name": "Carrier",
+      "coverage_start": "2018-10-02",
+      "coverage_end": "2028-10-02",
+      "registration_status": "registered"
     },
     {
-      "date": "2024-11-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 152,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "warranty_id": "warr_003",
+      "asset_id": "asset_washing_machine",
+      "provider_name": "Samsung",
+      "coverage_start": "2022-11-03",
+      "coverage_end": "2027-11-03",
+      "registration_status": "registered"
     },
     {
-      "date": "2024-12-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 168,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "warranty_id": "warr_004",
+      "asset_id": "asset_dryer",
+      "provider_name": "Samsung",
+      "coverage_start": "2022-11-03",
+      "coverage_end": "2027-11-03",
+      "registration_status": "registered"
     },
     {
-      "date": "2025-01-15",
-      "category": "utility",
-      "description": "Virginia Natural Gas — gas bill",
-      "amount": 98,
-      "system": "hvac",
-      "provider_id": null,
-      "asset_id": null
+      "warranty_id": "warr_005",
+      "asset_id": "asset_garage_door_opener",
+      "provider_name": "Chamberlain",
+      "coverage_start": "2021-05-20",
+      "coverage_end": "2026-05-20",
+      "registration_status": "registered"
     },
     {
-      "date": "2025-02-15",
-      "category": "utility",
-      "description": "Virginia Natural Gas — gas bill",
-      "amount": 112,
-      "system": "hvac",
-      "provider_id": null,
-      "asset_id": null
+      "warranty_id": "warr_006",
+      "asset_id": "asset_ev_charger",
+      "provider_name": "ChargePoint",
+      "coverage_start": "2025-06-22",
+      "coverage_end": "2028-06-22",
+      "registration_status": "registered"
+    }
+  ],
+  "service_providers": [
+    {
+      "provider_id": "prov_001",
+      "name": "Fairfax Plumbing Pros",
+      "trade_type": "plumber",
+      "phone": "703-555-1111",
+      "rating": 5,
+      "notes": "Responsive and fair pricing",
+      "past_job_ids": ["maint_001", "maint_002", "maint_005"]
     },
     {
-      "date": "2025-03-15",
-      "category": "utility",
-      "description": "Virginia Natural Gas — gas bill",
-      "amount": 105,
-      "system": "hvac",
-      "provider_id": null,
-      "asset_id": null
+      "provider_id": "prov_002",
+      "name": "Northern Virginia Heating & Air",
+      "trade_type": "hvac",
+      "phone": "703-555-2222",
+      "rating": 4,
+      "notes": "Good work, slightly expensive",
+      "past_job_ids": ["maint_003"]
     },
     {
-      "date": "2025-04-18",
-      "category": "service",
-      "description": "Sump pump annual inspection and cleaning",
-      "amount": 95,
-      "system": "plumbing",
-      "provider_id": "prov-001",
-      "asset_id": "plumb-002"
+      "provider_id": "prov_003",
+      "name": "RapidFix Home Services",
+      "trade_type": "appliance",
+      "phone": "703-555-3333",
+      "rating": 2,
+      "notes": "Showed up late, communication was poor, and the issue was not fully resolved on first visit.",
+      "past_job_ids": ["maint_004"]
+    }
+  ],
+  "maintenance_events": [
+    {
+      "maintenance_event_id": "maint_001",
+      "asset_id": "asset_water_heater",
+      "system_id": "sys_plumbing",
+      "provider_id": "prov_001",
+      "service_date": "2024-08-21",
+      "service_type": "repair",
+      "issue_description": "Rattling noise and reduced hot water",
+      "resolution": "Replaced heating element and flushed tank",
+      "service_rating": 5,
+      "financial_record_id": "fin_001",
+      "document_ids": ["doc_002"]
     },
     {
-      "date": "2025-06-05",
-      "category": "service",
-      "description": "LG washer drain pump noise — cleared debris",
-      "amount": 150,
-      "system": "appliances",
-      "provider_id": "prov-004",
-      "asset_id": "appl-003"
+      "maintenance_event_id": "maint_002",
+      "asset_id": "asset_water_heater",
+      "system_id": "sys_plumbing",
+      "provider_id": "prov_001",
+      "service_date": "2026-03-10",
+      "service_type": "inspection",
+      "issue_description": "Rumbling noise and higher energy use",
+      "resolution": "Inspected unit and recommended replacement within 6-12 months",
+      "service_rating": 5,
+      "financial_record_id": "fin_002",
+      "document_ids": ["doc_003", "doc_006"]
     },
     {
-      "date": "2025-07-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 195,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "maintenance_event_id": "maint_003",
+      "asset_id": "asset_furnace",
+      "system_id": "sys_hvac",
+      "provider_id": "prov_002",
+      "service_date": "2025-10-05",
+      "service_type": "seasonal_maintenance",
+      "issue_description": "Annual heating tune-up",
+      "resolution": "Cleaned burners and verified normal operation",
+      "service_rating": 4,
+      "financial_record_id": "fin_003",
+      "document_ids": []
     },
     {
-      "date": "2025-08-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 215,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "maintenance_event_id": "maint_004",
+      "asset_id": "asset_washing_machine",
+      "system_id": "sys_water",
+      "provider_id": "prov_003",
+      "service_date": "2025-09-14",
+      "service_type": "repair",
+      "issue_description": "Washer was not draining properly",
+      "resolution": "Cleared partial blockage, but the issue returned within a week",
+      "service_rating": 2,
+      "financial_record_id": "fin_004",
+      "document_ids": ["doc_007"]
     },
     {
+      "maintenance_event_id": "maint_005",
+      "asset_id": "asset_water_softener",
+      "system_id": "sys_plumbing",
+      "provider_id": "prov_001",
+      "service_date": "2025-05-11",
+      "service_type": "maintenance",
+      "issue_description": "Routine inspection and salt bridge removal",
+      "resolution": "Removed salt bridge, cleaned brine tank, system operating normally",
+      "service_rating": 5,
+      "financial_record_id": "fin_005",
+      "document_ids": []
+    }
+  ],
+  "financial_records": [
+    {
+      "financial_record_id": "fin_001",
+      "asset_id": "asset_water_heater",
+      "system_id": "sys_plumbing",
+      "provider_id": "prov_001",
+      "date": "2024-08-21",
+      "invoice_total": 275,
+      "labor_total": 180,
+      "parts_total": 95
+    },
+    {
+      "financial_record_id": "fin_002",
+      "asset_id": "asset_water_heater",
+      "system_id": "sys_plumbing",
+      "provider_id": "prov_001",
+      "date": "2026-03-10",
+      "invoice_total": 125,
+      "labor_total": 125,
+      "parts_total": 0
+    },
+    {
+      "financial_record_id": "fin_003",
+      "asset_id": "asset_furnace",
+      "system_id": "sys_hvac",
+      "provider_id": "prov_002",
+      "date": "2025-10-05",
+      "invoice_total": 210,
+      "labor_total": 175,
+      "parts_total": 35
+    },
+    {
+      "financial_record_id": "fin_004",
+      "asset_id": "asset_washing_machine",
+      "system_id": "sys_water",
+      "provider_id": "prov_003",
       "date": "2025-09-14",
-      "category": "service",
-      "description": "AC annual maintenance and inspection",
-      "amount": 189,
-      "system": "hvac",
-      "provider_id": "prov-002",
-      "asset_id": "hvac-001"
+      "invoice_total": 220,
+      "labor_total": 180,
+      "parts_total": 40
     },
     {
-      "date": "2025-09-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 208,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "financial_record_id": "fin_005",
+      "asset_id": "asset_water_softener",
+      "system_id": "sys_plumbing",
+      "provider_id": "prov_001",
+      "date": "2025-05-11",
+      "invoice_total": 145,
+      "labor_total": 145,
+      "parts_total": 0
+    }
+  ],
+  "utility_history": [
+  {
+    "utility_record_id": "util_001",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-04-01",
+    "billing_period_end": "2025-04-30",
+    "usage_value": 842,
+    "usage_unit": "kwh",
+    "total_cost": 142.67
+  },
+  {
+    "utility_record_id": "util_002",
+    "utility_type": "water",
+    "billing_period_start": "2025-04-01",
+    "billing_period_end": "2025-04-30",
+    "usage_value": 5480,
+    "usage_unit": "gallons",
+    "total_cost": 68.42
+  },
+  {
+    "utility_record_id": "util_003",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-04-01",
+    "billing_period_end": "2025-04-30",
+    "usage_value": 36,
+    "usage_unit": "therms",
+    "total_cost": 61.18
+  },
+
+  {
+    "utility_record_id": "util_004",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-05-01",
+    "billing_period_end": "2025-05-31",
+    "usage_value": 917,
+    "usage_unit": "kwh",
+    "total_cost": 154.96
+  },
+  {
+    "utility_record_id": "util_005",
+    "utility_type": "water",
+    "billing_period_start": "2025-05-01",
+    "billing_period_end": "2025-05-31",
+    "usage_value": 6210,
+    "usage_unit": "gallons",
+    "total_cost": 73.85
+  },
+  {
+    "utility_record_id": "util_006",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-05-01",
+    "billing_period_end": "2025-05-31",
+    "usage_value": 24,
+    "usage_unit": "therms",
+    "total_cost": 47.62
+  },
+
+  {
+    "utility_record_id": "util_007",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-06-01",
+    "billing_period_end": "2025-06-30",
+    "usage_value": 1168,
+    "usage_unit": "kwh",
+    "total_cost": 194.72
+  },
+  {
+    "utility_record_id": "util_008",
+    "utility_type": "water",
+    "billing_period_start": "2025-06-01",
+    "billing_period_end": "2025-06-30",
+    "usage_value": 7840,
+    "usage_unit": "gallons",
+    "total_cost": 84.93
+  },
+  {
+    "utility_record_id": "util_009",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-06-01",
+    "billing_period_end": "2025-06-30",
+    "usage_value": 16,
+    "usage_unit": "therms",
+    "total_cost": 39.84
+  },
+
+  {
+    "utility_record_id": "util_010",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-07-01",
+    "billing_period_end": "2025-07-31",
+    "usage_value": 1489,
+    "usage_unit": "kwh",
+    "total_cost": 245.38
+  },
+  {
+    "utility_record_id": "util_011",
+    "utility_type": "water",
+    "billing_period_start": "2025-07-01",
+    "billing_period_end": "2025-07-31",
+    "usage_value": 9630,
+    "usage_unit": "gallons",
+    "total_cost": 97.54
+  },
+  {
+    "utility_record_id": "util_012",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-07-01",
+    "billing_period_end": "2025-07-31",
+    "usage_value": 14,
+    "usage_unit": "therms",
+    "total_cost": 37.11
+  },
+
+  {
+    "utility_record_id": "util_013",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-08-01",
+    "billing_period_end": "2025-08-31",
+    "usage_value": 1534,
+    "usage_unit": "kwh",
+    "total_cost": 252.44
+  },
+  {
+    "utility_record_id": "util_014",
+    "utility_type": "water",
+    "billing_period_start": "2025-08-01",
+    "billing_period_end": "2025-08-31",
+    "usage_value": 10120,
+    "usage_unit": "gallons",
+    "total_cost": 101.26
+  },
+  {
+    "utility_record_id": "util_015",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-08-01",
+    "billing_period_end": "2025-08-31",
+    "usage_value": 15,
+    "usage_unit": "therms",
+    "total_cost": 38.05
+  },
+
+  {
+    "utility_record_id": "util_016",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-09-01",
+    "billing_period_end": "2025-09-30",
+    "usage_value": 1261,
+    "usage_unit": "kwh",
+    "total_cost": 210.13
+  },
+  {
+    "utility_record_id": "util_017",
+    "utility_type": "water",
+    "billing_period_start": "2025-09-01",
+    "billing_period_end": "2025-09-30",
+    "usage_value": 7560,
+    "usage_unit": "gallons",
+    "total_cost": 82.67
+  },
+  {
+    "utility_record_id": "util_018",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-09-01",
+    "billing_period_end": "2025-09-30",
+    "usage_value": 18,
+    "usage_unit": "therms",
+    "total_cost": 41.27
+  },
+
+  {
+    "utility_record_id": "util_019",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-10-01",
+    "billing_period_end": "2025-10-31",
+    "usage_value": 936,
+    "usage_unit": "kwh",
+    "total_cost": 158.44
+  },
+  {
+    "utility_record_id": "util_020",
+    "utility_type": "water",
+    "billing_period_start": "2025-10-01",
+    "billing_period_end": "2025-10-31",
+    "usage_value": 5890,
+    "usage_unit": "gallons",
+    "total_cost": 71.02
+  },
+  {
+    "utility_record_id": "util_021",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-10-01",
+    "billing_period_end": "2025-10-31",
+    "usage_value": 31,
+    "usage_unit": "therms",
+    "total_cost": 55.94
+  },
+
+  {
+    "utility_record_id": "util_022",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-11-01",
+    "billing_period_end": "2025-11-30",
+    "usage_value": 811,
+    "usage_unit": "kwh",
+    "total_cost": 138.27
+  },
+  {
+    "utility_record_id": "util_023",
+    "utility_type": "water",
+    "billing_period_start": "2025-11-01",
+    "billing_period_end": "2025-11-30",
+    "usage_value": 5170,
+    "usage_unit": "gallons",
+    "total_cost": 66.08
+  },
+  {
+    "utility_record_id": "util_024",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-11-01",
+    "billing_period_end": "2025-11-30",
+    "usage_value": 52,
+    "usage_unit": "therms",
+    "total_cost": 73.52
+  },
+
+  {
+    "utility_record_id": "util_025",
+    "utility_type": "electricity",
+    "billing_period_start": "2025-12-01",
+    "billing_period_end": "2025-12-31",
+    "usage_value": 884,
+    "usage_unit": "kwh",
+    "total_cost": 149.88
+  },
+  {
+    "utility_record_id": "util_026",
+    "utility_type": "water",
+    "billing_period_start": "2025-12-01",
+    "billing_period_end": "2025-12-31",
+    "usage_value": 5620,
+    "usage_unit": "gallons",
+    "total_cost": 69.14
+  },
+  {
+    "utility_record_id": "util_027",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2025-12-01",
+    "billing_period_end": "2025-12-31",
+    "usage_value": 74,
+    "usage_unit": "therms",
+    "total_cost": 91.86
+  },
+
+  {
+    "utility_record_id": "util_028",
+    "utility_type": "electricity",
+    "billing_period_start": "2026-01-01",
+    "billing_period_end": "2026-01-31",
+    "usage_value": 972,
+    "usage_unit": "kwh",
+    "total_cost": 163.91
+  },
+  {
+    "utility_record_id": "util_029",
+    "utility_type": "water",
+    "billing_period_start": "2026-01-01",
+    "billing_period_end": "2026-01-31",
+    "usage_value": 6010,
+    "usage_unit": "gallons",
+    "total_cost": 72.33
+  },
+  {
+    "utility_record_id": "util_030",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2026-01-01",
+    "billing_period_end": "2026-01-31",
+    "usage_value": 88,
+    "usage_unit": "therms",
+    "total_cost": 101.42
+  },
+
+  {
+    "utility_record_id": "util_031",
+    "utility_type": "electricity",
+    "billing_period_start": "2026-02-01",
+    "billing_period_end": "2026-02-28",
+    "usage_value": 901,
+    "usage_unit": "kwh",
+    "total_cost": 152.63
+  },
+  {
+    "utility_record_id": "util_032",
+    "utility_type": "water",
+    "billing_period_start": "2026-02-01",
+    "billing_period_end": "2026-02-28",
+    "usage_value": 5540,
+    "usage_unit": "gallons",
+    "total_cost": 68.95
+  },
+  {
+    "utility_record_id": "util_033",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2026-02-01",
+    "billing_period_end": "2026-02-28",
+    "usage_value": 79,
+    "usage_unit": "therms",
+    "total_cost": 95.37
+  },
+
+  {
+    "utility_record_id": "util_034",
+    "utility_type": "electricity",
+    "billing_period_start": "2026-03-01",
+    "billing_period_end": "2026-03-31",
+    "usage_value": 1048,
+    "usage_unit": "kwh",
+    "total_cost": 176.34
+  },
+  {
+    "utility_record_id": "util_035",
+    "utility_type": "water",
+    "billing_period_start": "2026-03-01",
+    "billing_period_end": "2026-03-31",
+    "usage_value": 5930,
+    "usage_unit": "gallons",
+    "total_cost": 71.64
+  },
+  {
+    "utility_record_id": "util_036",
+    "utility_type": "natural_gas",
+    "billing_period_start": "2026-03-01",
+    "billing_period_end": "2026-03-31",
+    "usage_value": 57,
+    "usage_unit": "therms",
+    "total_cost": 76.83
+  }
+  ],
+  "documents": [
+    {
+      "document_id": "doc_001",
+      "type": "warranty",
+      "title": "Rheem Water Heater Warranty PDF",
+      "file_path": "/documents/rheem_water_heater_warranty.pdf",
+      "linked_entities": [
+        { "entity_type": "asset", "entity_id": "asset_water_heater" },
+        { "entity_type": "warranty", "entity_id": "warr_001" }
+      ]
     },
     {
-      "date": "2025-10-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 189,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "document_id": "doc_002",
+      "type": "invoice",
+      "title": "Water Heater Repair Invoice 2024",
+      "file_path": "/documents/water_heater_repair_2024.pdf",
+      "linked_entities": [
+        { "entity_type": "asset", "entity_id": "asset_water_heater" },
+        { "entity_type": "maintenance_event", "entity_id": "maint_001" },
+        { "entity_type": "financial_record", "entity_id": "fin_001" }
+      ]
     },
     {
-      "date": "2025-10-28",
-      "category": "service",
-      "description": "Furnace pre-season tune-up",
-      "amount": 149,
-      "system": "hvac",
-      "provider_id": "prov-002",
-      "asset_id": "hvac-002"
+      "document_id": "doc_003",
+      "type": "estimate",
+      "title": "Water Heater Replacement Estimate 2026",
+      "file_path": "/documents/water_heater_replacement_estimate_2026.pdf",
+      "linked_entities": [
+        { "entity_type": "asset", "entity_id": "asset_water_heater" },
+        { "entity_type": "maintenance_event", "entity_id": "maint_002" }
+      ]
     },
     {
-      "date": "2025-11-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 198,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "document_id": "doc_004",
+      "type": "manual",
+      "title": "Carrier Furnace Manual",
+      "file_path": "/documents/carrier_furnace_manual.pdf",
+      "linked_entities": [
+        { "entity_type": "asset", "entity_id": "asset_furnace" }
+      ]
     },
     {
-      "date": "2025-12-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 221,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "document_id": "doc_005",
+      "type": "utility_bill",
+      "title": "Electric Bill March 2026",
+      "file_path": "/documents/electric_bill_2026_03.pdf",
+      "linked_entities": []
     },
     {
-      "date": "2026-01-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 234,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "document_id": "doc_006",
+      "type": "email",
+      "title": "Plumber Follow-Up Email",
+      "file_path": "/documents/plumber_followup_2026_03_10.pdf",
+      "linked_entities": [
+        { "entity_type": "service_provider", "entity_id": "prov_001" },
+        { "entity_type": "maintenance_event", "entity_id": "maint_002" }
+      ]
     },
     {
-      "date": "2026-02-15",
-      "category": "utility",
-      "description": "Dominion Energy — electric bill",
-      "amount": 247,
-      "system": "electrical",
-      "provider_id": null,
-      "asset_id": null
+      "document_id": "doc_007",
+      "type": "invoice",
+      "title": "Washer Drain Repair Invoice 2025",
+      "file_path": "/documents/washer_drain_repair_2025.pdf",
+      "linked_entities": [
+        { "entity_type": "asset", "entity_id": "asset_washing_machine" },
+        { "entity_type": "maintenance_event", "entity_id": "maint_004" },
+        { "entity_type": "financial_record", "entity_id": "fin_004" },
+        { "entity_type": "service_provider", "entity_id": "prov_003" }
+      ]
     },
     {
-      "date": "2025-01-15",
-      "category": "utility",
-      "description": "Rivanna Water & Sewer — water/sewer bill",
-      "amount": 72,
-      "system": "plumbing",
-      "provider_id": null,
-      "asset_id": null
-    },
-    {
-      "date": "2025-04-15",
-      "category": "utility",
-      "description": "Rivanna Water & Sewer — water/sewer bill",
-      "amount": 68,
-      "system": "plumbing",
-      "provider_id": null,
-      "asset_id": null
-    },
-    {
-      "date": "2025-07-15",
-      "category": "utility",
-      "description": "Rivanna Water & Sewer — water/sewer bill",
-      "amount": 85,
-      "system": "plumbing",
-      "provider_id": null,
-      "asset_id": null
-    },
-    {
-      "date": "2025-10-15",
-      "category": "utility",
-      "description": "Rivanna Water & Sewer — water/sewer bill",
-      "amount": 79,
-      "system": "plumbing",
-      "provider_id": null,
-      "asset_id": null
-    },
-    {
-      "date": "2023-07-20",
-      "category": "service",
-      "description": "Full electrical panel inspection and breaker testing",
-      "amount": 275,
-      "system": "electrical",
-      "provider_id": "prov-003",
-      "asset_id": "elec-001"
-    },
-    {
-      "date": "2023-08-14",
-      "category": "service",
-      "description": "Kitchen faucet repair — cartridge replacement",
-      "amount": 185,
-      "system": "plumbing",
-      "provider_id": "prov-001",
-      "asset_id": null
+      "document_id": "doc_008",
+      "type": "manual",
+      "title": "Samsung Washer Manual",
+      "file_path": "/documents/samsung_washer_manual.pdf",
+      "linked_entities": [
+        { "entity_type": "asset", "entity_id": "asset_washing_machine" }
+      ]
     }
   ]
 }
