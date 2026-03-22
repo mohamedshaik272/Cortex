@@ -119,7 +119,7 @@ TOOL_DECLARATIONS = [
             "args": {
                 "type": "object",
                 "properties": {
-                    "home_address"{
+                    "home_address":{
                         "type": "string",
                         "description": "Home address of the owner. "
                     },
