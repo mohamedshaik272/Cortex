@@ -54,142 +54,137 @@ TOOL_DECLARATIONS = [
         "name": "check_warranty",
         "description": "Checks warranty status for a specific device. Returns whether warranty is active or expired, what's covered, expiration date, and provider.",
         "parameters": {
-            "type": "object",
-            "properties": {
-                "asset_id": {
-                    "type": "string",
-                    "description": "Unique identifier for the asset, e.g. 'asset_furnace'."
-                },
-                "system_id": {
-                    "type": "string",
-                    "description": "The home system this asset belongs to, e.g. 'sys_hvac', 'sys_plumbing'."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Human-readable name of the asset, e.g. 'Gas Furnace'."
-                },
-                "category": {
-                    "type": "string",
-                    "description": "Asset category type, e.g. 'furnace', 'water_heater', 'washer'."
-                },
-                "make": {
-                    "type": "string",
-                    "description": "Manufacturer of the asset, e.g. 'Carrier', 'Rheem'."
-                },
-                "model": {
-                    "type": "string",
-                    "description": "Model number of the asset, e.g. '59SC5B080E17'."
-                },
-                "serial_number": {
-                    "type": "string",
-                    "description": "Manufacturer serial number, used for warranty and service lookups."
-                },
-                "install_date": {
-                    "type": "string",
-                    "format": "date",
-                    "description": "Date the asset was installed, in ISO 8601 format (YYYY-MM-DD)."
-                },
-                "expected_lifespan_years": {
-                    "type": "integer",
-                    "description": "Expected operational lifespan in years, used to estimate end-of-life."
-                },
-                "warranty_id": {
-                    "type": "string",
-                    "description": "Reference ID linking to the asset's warranty record, e.g. 'warr_002'."
-                },
-                "maintenance_event_ids": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "List of maintenance event IDs associated with this asset, e.g. ['maint_003']."
-                },
-                "document_ids": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "List of document IDs linked to this asset, such as manuals or receipts, e.g. ['doc_004']."
+            "asset":{
+                "type": "object",
+                "properties": {
+                    "asset_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the asset, e.g. 'asset_furnace'."
+                    },
+                    "system_id": {
+                        "type": "string",
+                        "description": "The home system this asset belongs to, e.g. 'sys_hvac', 'sys_plumbing'."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Human-readable name of the asset, e.g. 'Gas Furnace'."
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Asset category type, e.g. 'furnace', 'water_heater', 'washer'."
+                    },
+                    "make": {
+                        "type": "string",
+                        "description": "Manufacturer of the asset, e.g. 'Carrier', 'Rheem'."
+                    },
+                    "model": {
+                        "type": "string",
+                        "description": "Model number of the asset, e.g. '59SC5B080E17'."
+                    },
+                    "serial_number": {
+                        "type": "string",
+                        "description": "Manufacturer serial number, used for warranty and service lookups."
+                    },
+                    "install_date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Date the asset was installed, in ISO 8601 format (YYYY-MM-DD)."
+                    },
+                    "expected_lifespan_years": {
+                        "type": "integer",
+                        "description": "Expected operational lifespan in years, used to estimate end-of-life."
+                    },
+                    "warranty_id": {
+                        "type": "string",
+                        "description": "Reference ID linking to the asset's warranty record, e.g. 'warr_002'."
+                    },
+                    "maintenance_event_ids": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "List of maintenance event IDs associated with this asset, e.g. ['maint_003']."
+                    },
+                    "document_ids": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "List of document IDs linked to this asset, such as manuals or receipts, e.g. ['doc_004']."
+                    }
                 }
             },
             "required": ["asset"]
         }
     },
-
     {
         "name": "draft_message",
         "description": "Composes a message to a service provider. Includes homeowner address, device details (brand, model, age), the issue description, and availability. Returns the drafted message text.",
-        "parameters":{
-            "args": {
-                "type": "object",
-                "properties": {
-                    "home_address"{
-                        "type": "string",
-                        "description": "Home address of the owner. "
-                    },
-                    "asset": {
-                        "type": "object",
-                        "properties": {
-                            "asset_id": {
-                                "type": "string",
-                                "description": "Unique identifier for the asset, e.g. 'asset_furnace'."
-                            },
-                            "system_id": {
-                                "type": "string",
-                                "description": "The home system this asset belongs to, e.g. 'sys_hvac', 'sys_plumbing'."
-                            },
-                            "name": {
-                                "type": "string",
-                                "description": "Human-readable name of the asset, e.g. 'Gas Furnace'."
-                            },
-                            "category": {
-                                "type": "string",
-                                "description": "Asset category type, e.g. 'furnace', 'water_heater', 'washer'."
-                            },
-                            "make": {
-                                "type": "string",
-                                "description": "Manufacturer of the asset, e.g. 'Carrier', 'Rheem'."
-                            },
-                            "model": {
-                                "type": "string",
-                                "description": "Model number of the asset, e.g. '59SC5B080E17'."
-                            },
-                            "serial_number": {
-                                "type": "string",
-                                "description": "Manufacturer serial number, used for warranty and service lookups."
-                            },
-                            "install_date": {
-                                "type": "string",
-                                "format": "date",
-                                "description": "Date the asset was installed, in ISO 8601 format (YYYY-MM-DD)."
-                            },
-                            "expected_lifespan_years": {
-                                "type": "integer",
-                                "description": "Expected operational lifespan in years, used to estimate end-of-life."
-                            },
-                            "warranty_id": {
-                                "type": "string",
-                                "description": "Reference ID linking to the asset's warranty record, e.g. 'warr_002'."
-                            },
-                            "maintenance_event_ids": {
-                                "type": "array",
-                                "items": {"type": "string"},
-                                "description": "List of maintenance event IDs associated with this asset, e.g. ['maint_003']."
-                            },
-                            "document_ids": {
-                                "type": "array",
-                                "items": {"type": "string"},
-                                "description": "List of document IDs linked to this asset, such as manuals or receipts, e.g. ['doc_004']."
-                            }
-                        },
-
-                        "issue":{
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "home_address": {
+                    "type": "string",
+                    "description": "Home address of the owner."
+                },
+                "asset": {
+                    "type": "object",
+                    "properties": {
+                        "asset_id": {
                             "type": "string",
-                            "description": "Customer provides description with issues pertaining to asset."
+                            "description": "Unique identifier for the asset, e.g. 'asset_furnace'."
                         },
-                        "required": ["args"]
-
+                        "system_id": {
+                            "type": "string",
+                            "description": "The home system this asset belongs to, e.g. 'sys_hvac', 'sys_plumbing'."
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Human-readable name of the asset, e.g. 'Gas Furnace'."
+                        },
+                        "category": {
+                            "type": "string",
+                            "description": "Asset category type, e.g. 'furnace', 'water_heater', 'washer'."
+                        },
+                        "make": {
+                            "type": "string",
+                            "description": "Manufacturer of the asset, e.g. 'Carrier', 'Rheem'."
+                        },
+                        "model": {
+                            "type": "string",
+                            "description": "Model number of the asset, e.g. '59SC5B080E17'."
+                        },
+                        "serial_number": {
+                            "type": "string",
+                            "description": "Manufacturer serial number, used for warranty and service lookups."
+                        },
+                        "install_date": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "Date the asset was installed, in ISO 8601 format (YYYY-MM-DD)."
+                        },
+                        "expected_lifespan_years": {
+                            "type": "integer",
+                            "description": "Expected operational lifespan in years, used to estimate end-of-life."
+                        },
+                        "warranty_id": {
+                            "type": "string",
+                            "description": "Reference ID linking to the asset's warranty record, e.g. 'warr_002'."
+                        },
+                        "maintenance_event_ids": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "List of maintenance event IDs associated with this asset."
+                        },
+                        "document_ids": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "List of document IDs linked to this asset, such as manuals or receipts."
+                        }
                     }
-
+                },
+                "issue": {
+                    "type": "string",
+                    "description": "Customer provided description of the issue pertaining to the asset."
                 }
-
-            }
-        }
+            },
+            "required": ["home_address", "issue"]
     }
+}
 ]  # TODO: Populate with Gemini function declaration schema

@@ -3,7 +3,7 @@ Finds service providers by trade type (plumbing, hvac, electrical, general).
 
 Returns provider profile, job history with this home, ratings, and notes.
 
-Plan to use Google Maps API
+Still not sure if we will be using mock data or not, so left currently blank
 """
 
 
