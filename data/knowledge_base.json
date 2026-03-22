@@ -302,9 +302,9 @@
       "system_id": "sys_plumbing",
       "provider_id": "prov_001",
       "service_date": "2026-03-10",
-      "service_type": "inspection",
-      "issue_description": "Rumbling noise and higher energy use",
-      "resolution": "Inspected unit and recommended replacement within 6-12 months",
+      "service_type": "repair",
+      "issue_description": "Leaking pressure relief valve",
+      "resolution": "Replaced faulty pressure relief valve. Unit is 11 years old and past expected 10-year lifespan. Warranty expired 2025-03-14. Recommend considering replacement within 12-24 months.",
       "service_rating": 5,
       "financial_record_id": "fin_002",
       "document_ids": ["doc_003", "doc_006"]

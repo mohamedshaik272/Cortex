@@ -35,7 +35,7 @@ export default function HomeownerView() {
   return (
     <div className="space-y-8">
       <div className="grid gap-6 lg:grid-cols-3">
-        <div className="rounded-2xl border border-orange-200/30 bg-gradient-to-br from-orange-50/90 to-elevated p-6 ring-1 ring-orange-200/40 lg:col-span-1">
+        <div className="rounded-2xl border border-orange-200/30 bg-gradient-to-br from-orange-50/90 to-elevated p-6 ring-1 ring-orange-100/40 lg:col-span-1">
           <p className="text-xs font-medium text-terracotta">
             Home health
           </p>
@@ -68,18 +68,18 @@ export default function HomeownerView() {
             {homeAlerts.map((a) => (
               <li
                 key={a.id}
-                className="rounded-xl border border-orange-200/30 bg-paper/80 p-4"
+                className="rounded-xl border border-orange-200/30 bg-paper/60 p-4"
               >
                 <div className="flex items-center justify-between gap-3 mb-2">
                   <p className="font-medium text-ink">{a.title}</p>
                   <div className="flex shrink-0 items-center gap-2">
                     <span
-                      className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ring-1 ${severityStyles(a.severity)}`}
+                      className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ${severityStyles(a.severity)}`}
                     >
                       {severityLabel(a.severity)}
                     </span>
                     {a.eta ? (
-                      <span className="rounded-full bg-surface/80 px-2 py-0.5 text-[11px] font-medium text-muted ring-1 ring-orange-200/30">
+                      <span className="rounded-full bg-surface/80 px-2 py-0.5 text-xs font-medium text-muted ring-1 ring-orange-200/30">
                         {a.eta}
                       </span>
                     ) : null}
@@ -106,7 +106,7 @@ export default function HomeownerView() {
             {maintenanceQueue.map((m) => (
               <li
                 key={m.id}
-                className="flex gap-4 rounded-xl border border-orange-200/30 bg-paper/70 px-4 py-3"
+                className="flex gap-4 rounded-xl border border-orange-200/30 bg-paper/60 px-4 py-3"
               >
                 <div className="flex min-w-[4.5rem] flex-col items-center justify-center rounded-lg bg-orange-50 px-2 py-1 text-center ring-1 ring-orange-200/60">
                   <span className="text-xs text-muted">Due</span>
@@ -134,7 +134,7 @@ export default function HomeownerView() {
             {aiInsights.map((i) => (
               <li
                 key={i.id}
-                className="rounded-xl border border-orange-200/80 bg-orange-50/60 p-4"
+                className="rounded-xl border border-orange-200/30 bg-orange-50/60 p-4 ring-1 ring-orange-100/40"
               >
                 <p className="font-medium text-rust">{i.title}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted">

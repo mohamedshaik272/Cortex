@@ -84,9 +84,9 @@ export default function NeighborhoodMap({
                   center={[h.lat, h.lng]}
                   radius={isSel ? 14 : 10}
                   pathOptions={{
-                    color: isSel ? '#7c2d12' : '#57534e',
+                    color: isSel ? '#7c2d12' : '#6b5d4d',
                     weight: isSel ? 3 : 2,
-                    fillColor: isSel ? '#ea580c' : '#a8a29e',
+                    fillColor: isSel ? '#ea580c' : '#e5dcd0',
                     fillOpacity: isSel ? 0.95 : 0.85,
                   }}
                   eventHandlers={{
@@ -101,7 +101,7 @@ export default function NeighborhoodMap({
                       <p className="mt-1 text-xs font-medium text-terracotta">
                         {formatServiceValueShort(h.annualServiceValue)}/yr
                       </p>
-                      <p className="mt-0.5 text-[11px] text-muted">
+                      <p className="mt-0.5 text-xs text-muted">
                         Annual service value
                       </p>
                       <p className="mt-0.5 text-xs text-muted">

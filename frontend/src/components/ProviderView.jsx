@@ -29,11 +29,11 @@ function trendClass(t) {
 export default function ProviderView() {
   return (
     <div className="space-y-8">
-      <div className="rounded-2xl border border-orange-300/50 bg-gradient-to-br from-orange-50/95 via-paper/80 to-canvas p-6 ring-1 ring-orange-200/50 sm:p-8">
+      <div className="rounded-2xl border border-orange-200/30 bg-gradient-to-br from-orange-50/95 via-paper/80 to-canvas p-6 ring-1 ring-orange-100/40 sm:p-8">
         <h2 className="font-display text-xl font-semibold text-ink">
           Market trends from real homes
         </h2>
-        <p className="mt-2 max-w-3xl text-muted">
+        <p className="mt-2 max-w-3xl text-sm text-muted">
           See what homeowners actually need across regions, climates, and housing
           types. Plan services, inventory, and product roadmaps based on
           real equipment lifecycles — not just search trends.
@@ -42,7 +42,7 @@ export default function ProviderView() {
           {providerBullets.map((b) => (
             <li
               key={b}
-              className="rounded-xl border border-orange-200/30 bg-paper/90 px-4 py-3 text-sm leading-relaxed text-muted"
+              className="rounded-xl border border-orange-200/30 bg-paper/60 px-4 py-3 text-sm leading-relaxed text-muted"
             >
               {b}
             </li>
@@ -62,7 +62,7 @@ export default function ProviderView() {
             {regionSignals.map((r) => (
               <li
                 key={r.region}
-                className="rounded-xl border border-orange-200/30 bg-paper/80 px-4 py-3"
+                className="rounded-xl border border-orange-200/30 bg-paper/60 px-4 py-3"
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-medium text-ink">{r.region}</span>
@@ -74,7 +74,7 @@ export default function ProviderView() {
                 </div>
                 <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-orange-100/60">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-terracotta to-accent"
+                    className="h-full rounded-full bg-gradient-to-r from-accent to-terracotta"
                     style={{ width: `${r.demand * 100}%` }}
                   />
                 </div>
@@ -104,7 +104,7 @@ export default function ProviderView() {
                 <div className="mt-1.5 flex items-center gap-3">
                   <div className="h-2 flex-1 overflow-hidden rounded-full bg-orange-100/60">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-clay via-accent to-orange-400"
+                      className="h-full rounded-full bg-gradient-to-r from-accent to-terracotta"
                       style={{ width: `${c.share}%` }}
                     />
                   </div>
@@ -118,7 +118,7 @@ export default function ProviderView() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-dashed border-clay/25 bg-surface/40 p-6 sm:p-8">
+      <div className="rounded-2xl border border-orange-200/30 bg-surface/40 p-6 ring-1 ring-orange-100/40 sm:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h3 className="font-display text-lg font-semibold text-ink">
@@ -134,7 +134,7 @@ export default function ProviderView() {
             {['APIs', 'Regional exports', 'Cohort benchmarks'].map((tag) => (
               <span
                 key={tag}
-                className="rounded-lg bg-paper/90 px-3 py-1 text-xs font-medium text-muted ring-1 ring-orange-200/30"
+                className="rounded-lg bg-paper/60 px-3 py-1 text-xs font-medium text-muted ring-1 ring-orange-200/30"
               >
                 {tag}
               </span>

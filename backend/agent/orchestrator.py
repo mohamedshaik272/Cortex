@@ -37,7 +37,7 @@ from google.genai import types
 
 from backend.agent.system_prompt import SYSTEM_PROMPT
 from backend.config import GEMINI_API_KEY, MODEL_NAME
-from backend.tools.registry import TOOL_DECLARATIONS, TOOL_FUNCTIONS
+from backend.tools.registry import TOOL_DECLARATIONS, TOOL_FUNCTIONS  # noqa: E402
 
 MAX_TOOL_CALLS = 12
 
@@ -188,12 +188,103 @@ def _extract_model_content(response: Any) -> types.Content | None:
 
 
 # Keep tool outputs short for reasoning trace display.
-def _summarize_output(output: str, max_chars: int = 220) -> str:
-    compact = " ".join(output.split())
-    if len(compact) <= max_chars:
-        return compact
+def _summarize_output(tool_name: str, output: str) -> str:
+    try:
+        data = json.loads(output)
+    except (json.JSONDecodeError, TypeError):
+        compact = " ".join(output.split())
+        return compact[:200] + "..." if len(compact) > 200 else compact
 
-    return f"{compact[: max_chars - 3]}..."
+    if tool_name == "get_device_info":
+        if data.get("error"):
+            return data["error"]
+        # Tool returns a flat asset dict directly
+        name = data.get("name", "Unknown")
+        age = data.get("age_years", "?")
+        brand = data.get("brand", "")
+        model = data.get("model_number", "")
+        detail = f"{brand} {model}".strip() or name
+        return f"{detail} — {age} yrs old"
+
+    if tool_name == "check_warranty":
+        if data.get("error"):
+            return data["error"]
+        # Multi-warranty response
+        warranties = data.get("warranties")
+        if isinstance(warranties, list):
+            active = [w.get("asset_name", "?") for w in warranties if w.get("status") == "active"]
+            expired = [w.get("asset_name", "?") for w in warranties if w.get("status") == "expired"]
+            parts = []
+            if active:
+                parts.append(f"{len(active)} active ({', '.join(active)})")
+            if expired:
+                parts.append(f"{len(expired)} expired ({', '.join(expired)})")
+            return "; ".join(parts) if parts else "No warranties on file"
+        # Single warranty response
+        status = data.get("status", "unknown")
+        name = data.get("asset_name") or data.get("name", "Asset")
+        exp = data.get("coverage_end", "")
+        summary = f"{name}: warranty {status}"
+        if exp:
+            summary += f" (expires {exp})" if status == "active" else f" (expired {exp})"
+        return summary
+
+    if tool_name == "find_provider":
+        providers = data.get("providers", [])
+        if not providers:
+            return "No providers found."
+        parts = []
+        for p in providers[:3]:
+            name = p.get("name", "Unknown")
+            rating = p.get("rating", "?")
+            phone = p.get("phone", "")
+            entry = f"{name} ({rating}★)"
+            if phone:
+                entry += f" — {phone}"
+            parts.append(entry)
+        return "; ".join(parts)
+
+    if tool_name == "get_spending":
+        records = data.get("financial_records", [])
+        utilities = data.get("utility_records", [])
+        parts = []
+        if records:
+            total = sum(r.get("invoice_total", 0) for r in records)
+            # Break down by service type if available
+            by_type = {}
+            for r in records:
+                stype = r.get("service_type", "service")
+                by_type.setdefault(stype, 0)
+                by_type[stype] += r.get("invoice_total", 0)
+            if len(by_type) > 1:
+                breakdown = ", ".join(f"${v:,.0f} {k}" for k, v in by_type.items())
+                parts.append(f"{len(records)} records, ${total:,.0f} total ({breakdown})")
+            else:
+                parts.append(f"{len(records)} service records, ${total:,.0f} total")
+        if utilities:
+            parts.append(f"{len(utilities)} utility bills")
+        return "; ".join(parts) if parts else "No spending records found."
+
+    if tool_name == "check_local_alerts":
+        alerts = data.get("alerts", [])
+        if not alerts:
+            return "No active alerts in your area."
+        parts = [a.get("title", a.get("type", "Alert")) for a in alerts[:4]]
+        return f"{len(alerts)} alert(s): " + ", ".join(parts)
+
+    if tool_name == "draft_message":
+        to = data.get("to") or data.get("provider_name", "provider")
+        return f"Message drafted to {to}"
+
+    if tool_name == "search_web":
+        results = data.get("results", [])
+        if not results:
+            return data.get("summary", "Search completed.")
+        titles = [r.get("title", "") for r in results[:3] if r.get("title")]
+        return f"{len(results)} results: " + "; ".join(titles) if titles else "Search completed."
+
+    compact = " ".join(str(data).split())
+    return compact[:200] + "..." if len(compact) > 200 else compact
 
 
 # Build a function-response part to send tool results back to the model.
@@ -312,7 +403,7 @@ async def run_agent(message: str, knowledge_base: dict, history: list) -> dict:
                 {
                     "tool_name": tool_name,
                     "input": args,
-                    "output_summary": _summarize_output(tool_output),
+                    "output_summary": _summarize_output(tool_name, tool_output),
                 }
             )
 

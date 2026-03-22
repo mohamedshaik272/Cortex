@@ -19,20 +19,15 @@ export default function DataExplorerPage() {
     <div className="min-h-svh bg-canvas font-sans text-ink antialiased">
       <Header />
 
-      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <main className="px-4 py-8 sm:px-6">
+        <div className="mx-auto max-w-6xl">
         {/* Page Header */}
         <div className="mb-8">
-          <p className="text-xs font-semibold text-terracotta">
-            Neighborhood overview
-          </p>
-          <h1 className="mt-2 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+          <h1 className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
             {NEIGHBORHOOD.name} — {NEIGHBORHOOD.city}, {NEIGHBORHOOD.state}
           </h1>
-          <p className="mt-2 max-w-2xl text-sm text-muted">
-            Explore homes in this neighborhood. Values shown are{' '}
-            <span className="font-medium text-ink">estimated annual service value</span> — the
-            projected cost of maintenance, repairs, and service needs for each home.
-            Click a home on the map or in the list to see full details.
+          <p className="mt-2 text-sm text-muted">
+            Explore homes in this neighborhood. Click a home on the map or in the list to see full details.
           </p>
         </div>
 
@@ -84,6 +79,7 @@ export default function DataExplorerPage() {
             <HouseDetailView house={selected} />
           </div>
         ) : null}
+        </div>
       </main>
 
       <footer className="border-t border-orange-200/20 bg-paper/30 px-4 py-6 sm:px-6">
@@ -95,7 +91,7 @@ export default function DataExplorerPage() {
             &larr; Back to home
           </Link>
           <p className="text-xs text-muted">
-            &copy; 2026 Cortex
+            &copy; {new Date().getFullYear()} Cortex
           </p>
         </div>
       </footer>

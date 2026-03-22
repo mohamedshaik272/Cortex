@@ -1,13 +1,30 @@
 import { Link } from "react-router-dom";
+import NodeGraph from "./NodeGraph";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden border-b border-orange-200/20 bg-paper px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16">
-      <div className="pointer-events-none absolute inset-0 opacity-90" aria-hidden="true">
+    <section
+      id="top"
+      className="relative border-b border-orange-200/20 bg-paper px-4 pb-36 pt-12 sm:px-6 sm:pb-52 sm:pt-16"
+    >
+      {/* ambient gradient blobs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-90" aria-hidden="true">
         <div className="absolute -left-1/4 top-0 h-[480px] w-[480px] rounded-full bg-orange-300/25 blur-[100px]" />
         <div className="absolute -right-1/4 bottom-0 h-[400px] w-[400px] rounded-full bg-orange-200/35 blur-[90px]" />
         <div className="absolute left-1/3 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-orange-200/20 blur-[70px]" />
       </div>
+
+      {/* node graph — fills the section as ambient background */}
+      <div
+        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.18] sm:opacity-[0.28]"
+        aria-hidden="true"
+      >
+        <div className="w-full max-w-7xl px-4">
+          <NodeGraph />
+        </div>
+      </div>
+
+      {/* foreground content */}
       <div className="relative mx-auto max-w-6xl">
         <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-orange-50/90 px-3 py-1 text-xs font-medium text-terracotta ring-1 ring-orange-200/80">
           <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(234,88,12,0.45)]" />

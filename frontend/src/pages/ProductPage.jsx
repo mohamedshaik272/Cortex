@@ -10,33 +10,39 @@ export default function ProductPage() {
   return (
     <div className="min-h-svh bg-canvas font-sans text-ink antialiased">
       <Header>
-        <nav
-          className="flex items-center gap-1 rounded-full bg-orange-50/40 p-1 ring-1 ring-orange-200/25"
-          aria-label="Insights mode"
-        >
-          <button
-            type="button"
-            onClick={() => setMode('homeowner')}
-            className={`rounded-full px-3 py-1.5 text-sm font-medium transition cursor-pointer ${
-              mode === 'homeowner'
-                ? 'bg-elevated text-terracotta shadow-sm ring-1 ring-orange-200/30'
-                : 'text-muted hover:text-ink'
+        {(scrolled) => (
+          <nav
+            className={`flex items-center gap-1 rounded-full p-1 transition-all duration-500 ${
+              scrolled
+                ? 'bg-orange-50/40 ring-1 ring-orange-200/25'
+                : 'bg-transparent ring-1 ring-transparent'
             }`}
+            aria-label="Insights mode"
           >
-            Homeowner
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode('provider')}
-            className={`rounded-full px-3 py-1.5 text-sm font-medium transition cursor-pointer ${
-              mode === 'provider'
-                ? 'bg-elevated text-rust shadow-sm ring-1 ring-orange-200/30'
-                : 'text-muted hover:text-ink'
-            }`}
-          >
-            Service &amp; product
-          </button>
-        </nav>
+            <button
+              type="button"
+              onClick={() => setMode('homeowner')}
+              className={`rounded-full px-3 py-1.5 text-sm font-medium transition cursor-pointer ${
+                mode === 'homeowner'
+                  ? 'bg-elevated text-terracotta shadow-sm ring-1 ring-orange-200/30'
+                  : 'text-muted hover:text-ink'
+              }`}
+            >
+              Homeowner
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode('provider')}
+              className={`rounded-full px-3 py-1.5 text-sm font-medium transition cursor-pointer ${
+                mode === 'provider'
+                  ? 'bg-elevated text-terracotta shadow-sm ring-1 ring-orange-200/30'
+                  : 'text-muted hover:text-ink'
+              }`}
+            >
+              Service &amp; product
+            </button>
+          </nav>
+        )}
       </Header>
       <Hero />
 
@@ -51,7 +57,7 @@ export default function ProductPage() {
                 ? 'Your home at a glance'
                 : 'Market overview'}
             </h2>
-            <p className="mt-1 text-muted">
+            <p className="mt-2 text-sm text-muted">
               {mode === 'homeowner'
                 ? 'Alerts, maintenance schedule, and systems for your home.'
                 : 'How service and product teams track homeowner needs.'}

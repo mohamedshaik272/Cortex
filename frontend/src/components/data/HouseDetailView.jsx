@@ -9,7 +9,7 @@ function formatServiceValue(n) {
 }
 
 const sectionCard =
-  'rounded-2xl border border-orange-200/30 bg-elevated p-5 ring-1 ring-orange-100/40';
+  'rounded-2xl border border-orange-200/30 bg-elevated p-6 ring-1 ring-orange-100/40';
 
 function Section({ icon, title, children }) {
   return (
@@ -65,7 +65,7 @@ function AppliancesSection({ items }) {
           <div className="flex flex-wrap items-start justify-between gap-2">
             <p className="font-semibold text-ink">{a.name}</p>
             <span
-              className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${healthColor(a.healthPct)}`}
+              className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${healthColor(a.healthPct)}`}
             >
               {a.healthPct}% health
             </span>
@@ -135,7 +135,7 @@ function ClimateSection({ c }) {
             {c.seasonalRisks.map((risk) => (
               <span
                 key={risk}
-                className="rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-medium text-rust ring-1 ring-orange-200/40"
+                className="rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-rust ring-1 ring-orange-200/40"
               >
                 {risk}
               </span>

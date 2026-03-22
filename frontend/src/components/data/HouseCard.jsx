@@ -14,7 +14,7 @@ export default function HouseCard({ house, isSelected, onSelect }) {
       className={`w-full rounded-xl border p-4 text-left transition cursor-pointer ${
         isSelected
           ? 'border-accent bg-orange-50/80 ring-2 ring-orange-300/60'
-          : 'border-orange-200/30 bg-paper/80 hover:border-orange-300/50 hover:bg-orange-50/40'
+          : 'border-orange-200/30 bg-paper/60 hover:border-orange-200/50 hover:bg-orange-50/40'
       }`}
     >
       <div className="relative mb-2 aspect-[4/3] w-full overflow-hidden rounded-lg bg-surface/60 ring-1 ring-orange-200/20">

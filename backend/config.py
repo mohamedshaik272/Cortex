@@ -13,5 +13,5 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash")
+MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.5-flash")
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "knowledge_base.json"

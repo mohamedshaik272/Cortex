@@ -17,9 +17,11 @@ export default function ChatInput({ onSend, disabled }) {
     }
   }
 
+  const canSend = text.trim().length > 0 && !disabled;
+
   return (
-    <form onSubmit={handleSubmit} className="px-4 py-4 border-t border-orange-200/20 bg-paper sm:px-6">
-      <div className="flex gap-2">
+    <form onSubmit={handleSubmit} className="border-t border-orange-200/20 bg-paper px-4 py-3 sm:px-6 sm:py-4">
+      <div className="flex items-center gap-3">
         <input
           type="text"
           value={text}
@@ -27,14 +29,15 @@ export default function ChatInput({ onSend, disabled }) {
           onKeyDown={handleKeyDown}
           placeholder="Ask about your home..."
           disabled={disabled}
-          className="flex-1 rounded-lg border border-orange-200/40 bg-elevated/80 px-4 py-3 text-sm text-ink placeholder:text-muted ring-1 ring-orange-200/20 focus:border-accent/50 focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="h-11 flex-1 rounded-xl border border-orange-200/30 bg-elevated px-4 text-sm text-ink placeholder:text-muted/60 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         />
         <button
           type="submit"
-          disabled={disabled || !text.trim()}
-          className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100 px-6 py-3"
+          disabled={!canSend}
+          aria-label="Send message"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-white shadow-sm transition-all hover:bg-terracotta active:scale-95 disabled:opacity-30 disabled:hover:bg-accent disabled:active:scale-100 disabled:cursor-not-allowed cursor-pointer"
         >
-          Send
+          <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>arrow_upward</span>
         </button>
       </div>
     </form>

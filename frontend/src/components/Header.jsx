@@ -13,6 +13,14 @@ export default function Header({ children }) {
   const navRef = useRef(null);
   const linkRefs = useRef([]);
   const [pill, setPill] = useState({ left: 0, width: 0, ready: false });
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const updatePill = useCallback(() => {
     const nav = navRef.current;
@@ -40,20 +48,34 @@ export default function Header({ children }) {
   }, [updatePill]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-orange-200/20 bg-paper/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <header
+      className={`sticky top-0 z-50 px-4 sm:px-6 transition-all duration-500 ${
+        scrolled
+          ? "border-b border-orange-200/20 bg-paper/85 backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 py-3">
         <div className="flex flex-wrap items-center gap-4">
           <NavLink to="/" className="font-display text-lg font-semibold tracking-tight text-ink">
             Cortex
           </NavLink>
           <nav
             ref={navRef}
-            className="relative flex items-center gap-1 rounded-full bg-orange-50/40 p-1 ring-1 ring-orange-200/25"
+            className={`relative flex items-center gap-1 rounded-full p-1 transition-all duration-500 ${
+              scrolled
+                ? "bg-orange-50/40 ring-1 ring-orange-200/25"
+                : "bg-transparent ring-1 ring-transparent"
+            }`}
             aria-label="Primary sections"
           >
             {pill.ready && (
               <span
-                className="absolute top-1 bottom-1 rounded-full bg-elevated shadow-sm ring-1 ring-orange-200/40 transition-all duration-300 ease-in-out"
+                className={`absolute top-1 bottom-1 rounded-full transition-all duration-500 ease-in-out ${
+                  scrolled
+                    ? "bg-elevated shadow-sm ring-1 ring-orange-200/40"
+                    : "bg-elevated/50 shadow-none ring-1 ring-orange-200/20"
+                }`}
                 style={{ left: pill.left, width: pill.width }}
                 aria-hidden="true"
               />
@@ -75,7 +97,7 @@ export default function Header({ children }) {
             ))}
           </nav>
         </div>
-        {children}
+        {typeof children === 'function' ? children(scrolled) : children}
       </div>
     </header>
   );

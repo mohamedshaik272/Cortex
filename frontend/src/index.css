@@ -24,6 +24,42 @@ body {
   }
 }
 
+/* Markdown inside chat bubbles */
+.prose-cortex p {
+  margin: 0;
+}
+.prose-cortex p + p {
+  margin-top: 0.5rem;
+}
+.prose-cortex ul,
+.prose-cortex ol {
+  margin: 0.375rem 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+.prose-cortex li {
+  margin: 0.25rem 0;
+}
+.prose-cortex li p {
+  display: inline;
+}
+.prose-cortex strong {
+  font-weight: 600;
+  color: inherit;
+}
+.prose-cortex code {
+  font-size: 0.8em;
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  background: rgba(0, 0, 0, 0.06);
+}
+.prose-cortex h1,
+.prose-cortex h2,
+.prose-cortex h3 {
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
 /* Leaflet overrides */
 .leaflet-container {
   background: #e5dcd0;

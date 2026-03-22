@@ -80,26 +80,27 @@ export default function Maintenance() {
     <div className="min-h-svh bg-canvas font-sans text-ink antialiased">
       <Header />
 
-      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <main className="px-4 py-8 sm:px-6">
+        <div className="mx-auto max-w-6xl">
         {/* Page Header */}
-        <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h1 className="font-display text-2xl font-semibold tracking-tight mb-2 sm:text-3xl">
-              Maintenance <span className="text-accent">&amp;</span> Warranty
-            </h1>
-            <p className="text-base text-muted">
-              Asset inventory, warranty tracking, and service history.
-            </p>
+        <div className="mb-8">
+          <h1 className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+            Maintenance <span className="text-accent">&amp;</span> Warranty
+          </h1>
+          <p className="mt-2 text-sm text-muted">
+            Asset inventory, warranty tracking, and service history.
+          </p>
+        </div>
+
+        {/* Stats */}
+        <div className="mb-6 flex flex-wrap gap-4">
+          <div className={cardClass}>
+            <span className="text-xs text-muted block mb-1">Assets</span>
+            <span className="font-display text-3xl font-bold text-accent">12</span>
           </div>
-          <div className="flex gap-4">
-            <div className={cardClass}>
-              <span className="text-xs text-muted block mb-1">Assets</span>
-              <span className="font-display text-3xl font-bold text-accent">12</span>
-            </div>
-            <div className={cardClass}>
-              <span className="text-xs text-muted block mb-1">Warranties</span>
-              <span className="font-display text-3xl font-bold text-ink">5 Active</span>
-            </div>
+          <div className={cardClass}>
+            <span className="text-xs text-muted block mb-1">Warranties</span>
+            <span className="font-display text-3xl font-bold text-ink">5 Active</span>
           </div>
         </div>
 
@@ -113,11 +114,11 @@ export default function Maintenance() {
                 <h2 className="font-display text-lg font-semibold text-ink">Maintenance Alerts</h2>
               </div>
               <div className="space-y-3">
-                <div className="p-4 bg-orange-50/80 border border-orange-200/50 rounded-xl">
+                <div className="p-4 bg-orange-50/80 border border-orange-200/30 rounded-xl">
                   <h3 className="font-semibold text-rust">Water Heater Replacement</h3>
                   <p className="text-sm text-muted mt-1">11 years old, past expected lifespan. Warranty expired. Replacement recommended within 6 months.</p>
                 </div>
-                <div className="p-4 bg-accent-soft/60 border border-orange-200/40 rounded-xl">
+                <div className="p-4 bg-accent-soft/60 border border-orange-200/30 rounded-xl">
                   <h3 className="font-semibold text-rust">Washer Drain Issue</h3>
                   <p className="text-sm text-muted mt-1">Previous repair by RapidFix did not fully resolve the issue. Consider rebooking.</p>
                 </div>
@@ -146,9 +147,10 @@ export default function Maintenance() {
                 <h2 className="font-display text-lg font-semibold text-ink">Asset Inventory</h2>
                 <span className="text-xs text-muted">{ASSETS.length} of 12</span>
               </div>
-              <table className="w-full text-left">
+              <div className="overflow-x-auto">
+              <table className="w-full min-w-[640px] text-left">
                 <thead>
-                  <tr className="text-[11px] text-muted bg-paper/50">
+                  <tr className="text-xs text-muted bg-paper/50">
                     <th className="px-6 py-3 font-medium">Asset</th>
                     <th className="px-6 py-3 font-medium">Warranty</th>
                     <th className="px-6 py-3 font-medium">Status</th>
@@ -160,7 +162,7 @@ export default function Maintenance() {
                     <tr key={id} className="hover:bg-paper/60 transition-colors">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <span className="material-symbols-outlined text-accent" style={{ fontSize: "22px" }}>{icon}</span>
+                          <span className="material-symbols-outlined text-accent" style={{ fontSize: '20px' }}>{icon}</span>
                           <div>
                             <p className="font-semibold text-ink">{name}</p>
                             <p className="text-xs text-muted mt-0.5">{make}</p>
@@ -168,16 +170,17 @@ export default function Maintenance() {
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${warrantyStyle}`}>{warrantyBadge}</span>
+                        <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${warrantyStyle}`}>{warrantyBadge}</span>
                       </td>
                       <td className={`px-6 py-4 text-sm ${nextServiceColor}`}>{nextService}</td>
                       <td className="px-6 py-4 text-right">
-                        <button className="material-symbols-outlined text-muted hover:text-accent transition-colors cursor-pointer" style={{ fontSize: "20px" }}>more_horiz</button>
+                        <button aria-label="More options" className="material-symbols-outlined text-muted hover:text-accent transition-colors cursor-pointer" style={{ fontSize: '20px' }}>more_horiz</button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
 
             {/* Service History */}
@@ -206,12 +209,13 @@ export default function Maintenance() {
             </div>
           </div>
         </div>
+        </div>
       </main>
 
       <footer className="border-t border-orange-200/20 bg-paper/30 px-4 py-6 sm:px-6">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <Link to="/" className="btn-ghost text-sm">&larr; Back to home</Link>
-          <p className="text-xs text-muted">&copy; 2026 Cortex</p>
+          <p className="text-xs text-muted">&copy; {new Date().getFullYear()} Cortex</p>
         </div>
       </footer>
     </div>
