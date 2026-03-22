@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 const NAV_ITEMS = [
   { to: "/", label: "Product", end: true },
   { to: "/data", label: "Data" },
-  { to: "/maintenance", label: "Maintenance" },
+  { to: "/my-home", label: "My Home" },
   { to: "/advisor", label: "Advisor" },
 ];
 
@@ -64,7 +64,7 @@ export default function Header({ children }) {
             ref={navRef}
             className={`relative flex items-center gap-1 rounded-full p-1 transition-all duration-500 ${
               scrolled
-                ? "bg-orange-50/40 ring-1 ring-orange-200/25"
+                ? "bg-accent-soft/40 ring-1 ring-orange-200/25"
                 : "bg-transparent ring-1 ring-transparent"
             }`}
             aria-label="Primary sections"

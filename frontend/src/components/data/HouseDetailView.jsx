@@ -21,7 +21,7 @@ function Section({ icon, title, children }) {
         >
           {icon}
         </span>
-        <h3 className="font-display text-base font-semibold text-ink">
+        <h3 className="font-display text-lg font-semibold text-ink">
           {title}
         </h3>
       </div>
@@ -49,7 +49,7 @@ function Note({ text }) {
 }
 
 function healthColor(pct) {
-  if (pct >= 85) return 'bg-orange-50 text-terracotta ring-1 ring-orange-200/60';
+  if (pct >= 85) return 'bg-accent-soft text-terracotta ring-1 ring-orange-200/60';
   if (pct >= 60) return 'bg-accent-soft text-rust ring-1 ring-orange-200/40';
   return 'bg-surface/80 text-clay ring-1 ring-orange-200/30';
 }
@@ -60,7 +60,7 @@ function AppliancesSection({ items }) {
       {items.map((a) => (
         <div
           key={a.name}
-          className="rounded-xl border border-orange-200/20 bg-paper/60 p-4"
+          className="rounded-xl border border-orange-200/20 bg-elevated/90 ring-1 ring-orange-100/40 p-4"
         >
           <div className="flex flex-wrap items-start justify-between gap-2">
             <p className="font-semibold text-ink">{a.name}</p>
@@ -90,7 +90,7 @@ function MaintenanceSection({ events }) {
       {events.map((e, i) => (
         <div
           key={i}
-          className="flex items-start gap-3 rounded-xl border border-orange-200/20 bg-paper/60 p-3"
+          className="flex items-start gap-3 rounded-xl border border-orange-200/20 bg-elevated/90 ring-1 ring-orange-100/40 p-3"
         >
           <div className="shrink-0 pt-0.5">
             <span
@@ -148,7 +148,7 @@ function ClimateSection({ c }) {
   );
 }
 
-export default function HouseDetailView({ house }) {
+export default function HouseDetailView({ house, locationContext }) {
   return (
     <div className="space-y-4">
       {/* Summary card */}
@@ -165,7 +165,7 @@ export default function HouseDetailView({ house }) {
               Estimated annual service value
             </p>
           </div>
-          <span className="rounded-full bg-orange-50/80 px-2.5 py-1 text-xs font-medium text-terracotta ring-1 ring-orange-200/40">
+          <span className="rounded-full bg-accent-soft/80 px-2.5 py-1 text-xs font-medium text-terracotta ring-1 ring-orange-200/40">
             Demand {house.demandIndex.toFixed(2)}
           </span>
         </div>
@@ -180,7 +180,7 @@ export default function HouseDetailView({ house }) {
         </div>
         <p className="mt-2 text-sm font-medium text-ink">{house.address}</p>
         <p className="text-xs text-muted">
-          {NEIGHBORHOOD.city}, {NEIGHBORHOOD.state} &middot; Built{' '}
+          {locationContext || `${NEIGHBORHOOD.city}, ${NEIGHBORHOOD.state}`} &middot; Built{' '}
           {house.yearBuilt}
         </p>
       </div>

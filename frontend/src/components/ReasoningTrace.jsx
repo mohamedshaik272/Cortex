@@ -16,7 +16,7 @@ function StepCard({ step, index, total }) {
       {/* Timeline line + dot */}
       <div className="flex flex-col items-center">
         <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-accent/10">
-          <span className="material-symbols-outlined text-accent" style={{ fontSize: '16px' }}>
+          <span className="material-symbols-outlined text-accent" style={{ fontSize: '18px' }}>
             {meta.icon}
           </span>
         </div>
@@ -45,11 +45,11 @@ export default function ReasoningTrace({ steps }) {
       {steps.length === 0 ? (
         <div className="flex flex-1 flex-col items-center justify-center py-12 text-center">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface/60">
-            <span className="material-symbols-outlined text-muted/50" style={{ fontSize: '20px' }}>
+            <span className="material-symbols-outlined text-muted" style={{ fontSize: '20px' }}>
               neurology
             </span>
           </div>
-          <p className="mt-3 max-w-[200px] text-xs text-muted/70">
+          <p className="mt-3 max-w-[200px] text-xs text-muted">
             Steps will appear here as Cortex works through your question.
           </p>
         </div>

@@ -29,7 +29,7 @@ export default function ChatInput({ onSend, disabled }) {
           onKeyDown={handleKeyDown}
           placeholder="Ask about your home..."
           disabled={disabled}
-          className="h-11 flex-1 rounded-xl border border-orange-200/30 bg-elevated px-4 text-sm text-ink placeholder:text-muted/60 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="h-11 flex-1 rounded-xl border border-orange-200/30 bg-elevated/80 px-4 text-sm text-ink ring-1 ring-orange-200/20 placeholder:text-muted focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         />
         <button
           type="submit"

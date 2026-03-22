@@ -15,7 +15,7 @@ export default {
         /* ── Accent family ── */
         accent: "#ea580c",
         "accent-soft": "#fff7ed",
-        amber: "#d97706",
+
         terracotta: "#c2410c",
         rust: "#9a3412",
         clay: "#7c2d12",

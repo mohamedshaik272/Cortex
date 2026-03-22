@@ -56,7 +56,7 @@ export default function Advisor() {
               Advisor
             </h1>
             <p className="mt-2 text-sm text-muted">
-              Ask anything about your home — maintenance, warranties, service history, and more.
+              Ask anything about your home: maintenance, warranties, service history, and more.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function Advisor() {
               >
                 <span className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-accent" style={{ fontSize: '18px' }}>timeline</span>
-                  Activity — {reasoningSteps.length} steps
+                  Activity · {reasoningSteps.length} steps
                 </span>
                 <span className="material-symbols-outlined text-muted" style={{ fontSize: '18px' }}>
                   {showTrace ? 'expand_less' : 'expand_more'}
@@ -105,9 +105,9 @@ export default function Advisor() {
         </div>
       </main>
 
-      <footer className="shrink-0 border-t border-orange-200/20 bg-paper/30 px-4 py-4 sm:px-6">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link to="/" className="btn-ghost text-sm">&larr; Back to home</Link>
+      <footer className="shrink-0 border-t border-orange-200/20 bg-paper/30 px-4 py-6 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <Link to="/" className="btn-ghost text-sm">&larr; Back to product</Link>
           <p className="text-xs text-muted">&copy; {new Date().getFullYear()} Cortex</p>
         </div>
       </footer>

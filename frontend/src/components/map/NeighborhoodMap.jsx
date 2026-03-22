@@ -29,12 +29,27 @@ function InitView({ center, zoom }) {
   return null;
 }
 
+function FitBoundsToHouses({ houses }) {
+  const map = useMap();
+  const prevLen = useRef(houses.length);
+  useEffect(() => {
+    if (!houses.length) return;
+    if (houses.length === prevLen.current && prevLen.current > 0) return;
+    prevLen.current = houses.length;
+    const bounds = houses.map((h) => [h.lat, h.lng]);
+    map.fitBounds(bounds, { padding: [32, 32], maxZoom: 17 });
+  }, [map, houses]);
+  return null;
+}
+
 export default function NeighborhoodMap({
   houses,
   selectedId,
   onSelect,
   center,
   zoom,
+  totalInSubdivision,
+  fitBounds,
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -62,6 +77,7 @@ export default function NeighborhoodMap({
             aria-label="Neighborhood map"
           >
             <InitView center={center} zoom={zoom} />
+            {fitBounds ? <FitBoundsToHouses houses={houses} /> : null}
             <LayersControl position="bottomright">
               <BaseLayer checked name="Map">
                 <TileLayer
@@ -115,7 +131,7 @@ export default function NeighborhoodMap({
           </MapContainer>
 
           <div className="pointer-events-none absolute left-3 top-3 z-[400] rounded-lg bg-elevated/95 px-3 py-2 text-sm font-medium text-ink shadow-md ring-1 ring-orange-200/30">
-            {houses.length} of {houses.length} homes
+            {houses.length} of {totalInSubdivision ?? houses.length} homes
           </div>
 
           <div className="pointer-events-none absolute bottom-12 right-12 z-[400] flex flex-col gap-1 rounded-lg bg-elevated/90 px-2 py-1.5 text-xs text-muted ring-1 ring-orange-200/20">

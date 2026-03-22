@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function formatServiceValue(n) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -6,15 +8,19 @@ function formatServiceValue(n) {
   }).format(n);
 }
 
-export default function HouseCard({ house, isSelected, onSelect }) {
+export default function HouseCard({ house, isSelected, onSelect, detailHref }) {
+  const Tag = detailHref ? Link : 'button';
+  const interactProps = detailHref
+    ? { to: detailHref }
+    : { type: 'button', onClick: onSelect };
+
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className={`w-full rounded-xl border p-4 text-left transition cursor-pointer ${
+    <Tag
+      {...interactProps}
+      className={`block w-full rounded-xl border p-4 text-left transition cursor-pointer ${
         isSelected
-          ? 'border-accent bg-orange-50/80 ring-2 ring-orange-300/60'
-          : 'border-orange-200/30 bg-paper/60 hover:border-orange-200/50 hover:bg-orange-50/40'
+          ? 'border-accent bg-accent-soft/80 ring-2 ring-accent/30'
+          : 'border-orange-200/30 bg-elevated hover:border-orange-200/50 hover:bg-accent-soft/40'
       }`}
     >
       <div className="relative mb-2 aspect-[4/3] w-full overflow-hidden rounded-lg bg-surface/60 ring-1 ring-orange-200/20">
@@ -38,6 +44,11 @@ export default function HouseCard({ house, isSelected, onSelect }) {
       </p>
       <p className="mt-0.5 text-xs text-muted">{house.address}</p>
       <p className="mt-0.5 text-xs text-muted">{house.homeType}</p>
-    </button>
+      {detailHref ? (
+        <p className="mt-2 text-xs font-medium text-accent">
+          View full home record &rarr;
+        </p>
+      ) : null}
+    </Tag>
   );
 }

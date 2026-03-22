@@ -14,7 +14,7 @@ export default function ChatWindow({ messages, loading, suggestions, onSuggestio
       {messages.length === 0 ? (
         <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10">
-            <span className="material-symbols-outlined text-accent" style={{ fontSize: '28px' }}>
+            <span className="material-symbols-outlined text-accent" style={{ fontSize: '22px' }}>
               home_app_logo
             </span>
           </div>

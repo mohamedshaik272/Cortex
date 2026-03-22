@@ -6,7 +6,7 @@ export default function MessageBubble({ message }) {
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} py-1.5`}>
       <div className="flex max-w-[75%] flex-col gap-1">
-        <span className={`text-[11px] font-medium ${isUser ? "text-right text-muted/60" : "text-muted/60"}`}>
+        <span className={`text-[11px] font-medium ${isUser ? "text-right text-muted" : "text-muted"}`}>
           {isUser ? "You" : "Cortex"}
         </span>
         <div

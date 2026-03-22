@@ -16,7 +16,7 @@ body {
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl border border-orange-200/60 bg-elevated/90 px-5 py-2.5 text-sm font-semibold text-ink ring-1 ring-orange-200/30 transition-all hover:border-accent/40 hover:bg-orange-50/80 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas cursor-pointer;
+    @apply inline-flex items-center justify-center rounded-xl border border-orange-200/60 bg-elevated/90 px-5 py-2.5 text-sm font-semibold text-ink ring-1 ring-orange-200/30 transition-all hover:border-accent/40 hover:bg-accent-soft/80 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas cursor-pointer;
   }
 
   .btn-ghost {
