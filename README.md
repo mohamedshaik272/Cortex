@@ -25,7 +25,7 @@ Cortex gives homeowners a single place to understand everything about their home
 | Layer | Technology |
 |-------|-----------|
 | Frontend | React + Tailwind CSS (Vite) |
-| AI | Gemini API (gemini-2.0-flash) with function calling |
+| AI | Gemini API (gemini-2.5-flash) with function calling |
 | Backend | Python + FastAPI |
 | Data | Structured JSON knowledge base |
 
@@ -50,6 +50,6 @@ npm install
 npm run dev  # runs on localhost:5173
 ```
 
-## HooHacks 2025
+## HooHacks 2026
 
-Cortex was built and submitted for [HooHacks 2025](https://hoohacks.io).
+Cortex was built and submitted for [HooHacks 2026](https://hoohacks.io).
