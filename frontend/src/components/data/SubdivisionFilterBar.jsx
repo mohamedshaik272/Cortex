@@ -20,7 +20,7 @@ function FilterSelect({ value, onChange, options, placeholder, label }) {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className={`flex cursor-pointer items-center gap-2 rounded-xl border border-orange-200/30 bg-elevated/80 px-3 py-2 text-sm ring-1 ring-orange-200/20 transition-colors hover:border-accent/30 ${
+        className={`flex cursor-pointer items-center gap-2 rounded-xl border border-orange-200/30 bg-elevated/80 px-3 py-2.5 text-sm ring-1 ring-orange-200/20 transition-colors hover:border-accent/30 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
           open ? 'border-accent/40 ring-2 ring-accent/20' : ''
         }`}
         aria-label={label}
@@ -60,7 +60,7 @@ function FilterSelect({ value, onChange, options, placeholder, label }) {
                 onChange(option.value)
                 setOpen(false)
               }}
-              className={`flex w-full cursor-pointer items-center px-3 py-2 text-left text-sm transition-colors hover:bg-accent-soft/60 ${
+              className={`flex w-full cursor-pointer items-center px-3 py-2.5 text-left text-sm transition-colors hover:bg-accent-soft/60 focus-visible:bg-accent-soft/60 focus-visible:outline-none ${
                 value === option.value
                   ? 'font-medium text-accent'
                   : 'text-ink'
@@ -130,7 +130,7 @@ export default function SubdivisionFilterBar({
           value={value.search}
           onChange={(e) => onChange({ ...value, search: e.target.value })}
           placeholder="Search address, appliances, HVAC..."
-          className="min-w-[180px] flex-1 rounded-xl border border-orange-200/30 bg-elevated/80 px-3 py-2 text-sm text-ink placeholder:text-muted ring-1 ring-orange-200/20 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20"
+          className="min-w-[180px] flex-1 rounded-xl border border-orange-200/30 bg-elevated/80 px-3 py-2.5 text-sm text-ink placeholder:text-muted ring-1 ring-orange-200/20 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20"
           aria-label="Search property features"
         />
         <FilterSelect

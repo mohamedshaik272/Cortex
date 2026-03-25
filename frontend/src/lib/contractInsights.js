@@ -1,4 +1,4 @@
-/** Client-side demo extraction — keyword / pattern based, not legal advice. */
+/** Client-side extraction — keyword / pattern based. */
 
 function normalize(s) {
   return s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -18,10 +18,10 @@ export function extractContractInsights(raw) {
   const hoaOrSpecialTerms = [];
 
   if (/hoa|homeowners?\s+association/i.test(text)) {
-    hoaOrSpecialTerms.push('HOA / community association terms referenced. Review covenants for exterior modifications.');
+    hoaOrSpecialTerms.push('HOA or community association terms found. Check covenants before making exterior changes.');
   }
   if (/special\s+assessment|assessment/i.test(text)) {
-    hoaOrSpecialTerms.push('Possible special assessment language. Verify with closing disclosure.');
+    hoaOrSpecialTerms.push('Possible special assessment language found. Check your closing disclosure for details.');
   }
 
   const dates = findDates(text);
@@ -32,8 +32,8 @@ export function extractContractInsights(raw) {
     warranties.push({
       id: 'w-builder',
       title: 'Builder structural / systems warranty',
-      summary: 'Detected builder warranty language (typical 1–10 yr coverage by component).',
-      coverage: 'Structural, systems, and workmanship per schedule. Often excludes appliances installed by owner.',
+      summary: 'Builder warranty found (typically 1–10 years depending on the component).',
+      coverage: 'Covers structural, systems, and workmanship as scheduled. Usually excludes owner-installed appliances.',
       expiresOn: exp,
       status: /expir|closed|terminated/i.test(lower) ? 'expired' : 'limited',
       appliesToKeywords: ['roof', 'structural', 'hvac', 'plumbing', 'electrical'],
@@ -46,8 +46,8 @@ export function extractContractInsights(raw) {
     warranties.push({
       id: 'w-hvac',
       title: 'HVAC equipment warranty',
-      summary: 'Manufacturer parts / compressor coverage referenced.',
-      coverage: 'Parts limited warranty; labor often 1 yr from installer.',
+      summary: 'Manufacturer parts and compressor coverage found.',
+      coverage: 'Limited parts warranty. Labor is usually covered for 1 year from install.',
       status: 'limited',
       appliesToKeywords: ['hvac', 'heat pump', 'carrier'],
       exclusions: ['lack of maintenance', 'improper filter'],
@@ -60,8 +60,8 @@ export function extractContractInsights(raw) {
     warranties.push({
       id: 'w-wh',
       title: 'Water heater manufacturer warranty',
-      summary: 'Tank / parts limited warranty; anode rod may be excluded after inspection.',
-      coverage: 'Typically 6–12 years on tank; varies by registration.',
+      summary: 'Tank and parts warranty found. Anode rod may not be covered after inspection.',
+      coverage: 'Tank coverage is typically 6–12 years, depending on registration.',
       expiresOn: exp,
       status: /void|null|expired/i.test(lower) ? 'expired' : 'limited',
       appliesToKeywords: ['water heater', 'tank', 'hot water'],
@@ -74,8 +74,8 @@ export function extractContractInsights(raw) {
     warranties.push({
       id: 'w-roof',
       title: 'Roofing material warranty',
-      summary: 'Manufacturer wind / algae limited warranty if applicable.',
-      coverage: 'Material defect; workmanship by installer.',
+      summary: 'Manufacturer warranty for wind and algae resistance, if applicable.',
+      coverage: 'Covers material defects. Workmanship is covered by the installer.',
       status: 'limited',
       appliesToKeywords: ['roof', 'shingle', 'flashings'],
       exclusions: ['acts of god', 'foot traffic'],
@@ -87,8 +87,8 @@ export function extractContractInsights(raw) {
     warranties.push({
       id: 'w-generic',
       title: 'Warranty language detected',
-      summary: 'Contract references warranties. Review full PDF with counsel for scope.',
-      coverage: 'Unspecified in extract. See original document.',
+      summary: 'Warranty language found in the contract. Review the full PDF for specifics.',
+      coverage: 'Details not available from this extract. See the original document.',
       status: 'unknown',
       appliesToKeywords: ['general'],
       exclusions: [],
@@ -99,7 +99,7 @@ export function extractContractInsights(raw) {
   if (/closing|settlement|title/i.test(lower)) {
     expenseNotes.push({
       label: 'Closing / settlement costs',
-      notes: 'Line items referenced. Verify against final disclosure.',
+      notes: 'Line items found. Verify against your final closing disclosure.',
     });
   }
   if (/escrow|property tax|tax/i.test(lower)) {

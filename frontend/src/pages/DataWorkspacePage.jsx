@@ -5,6 +5,7 @@ import HouseCard from '../components/data/HouseCard'
 import InsightsDeck from '../components/data/InsightsDeck'
 import ServiceTrendChart from '../components/data/ServiceTrendChart'
 import SubdivisionFilterBar from '../components/data/SubdivisionFilterBar'
+import { CommunityMarketplacePreview } from '../components/data/CommunityMarketplacePreview'
 import Header from '../components/Header'
 import NeighborhoodMap from '../components/map/NeighborhoodMap'
 import { WILLOWBROOK, willowbrookHomes } from '../data/willowbrookDemo'
@@ -65,7 +66,7 @@ const TAB_HEADERS = {
   },
   bridge: {
     title: 'Market intelligence',
-    subtitle: 'Risk, pipeline, savings, and lead scoring — synced to filters',
+    subtitle: 'Risk, pipeline, savings, and lead scoring',
   },
   partner: {
     title: `${BRAND.name} · Partner view`,
@@ -126,13 +127,13 @@ export default function DataWorkspacePage() {
       <Header />
 
       {/* Page header */}
-      <div className="bg-paper/80 px-4 py-4 sm:px-6">
+      <div className="bg-paper/80 px-4 py-6 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0">
             <h1 className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
               {header.title}
             </h1>
-            <p className="mt-0.5 text-sm text-muted">{header.subtitle}</p>
+            <p className="mt-1 text-sm text-muted">{header.subtitle}</p>
           </div>
           <DataSubnav activeTab={tab} onTabChange={setTab} />
         </div>
@@ -204,17 +205,17 @@ function CommunityTab({ filtered, selectedId, setSelectedId, insights }) {
         <Kpi
           label="Homes in cohort"
           value={String(insights.homeCount)}
-          hint="Filtered set shown on map and tiles"
+          hint="Matches current filters"
         />
         <Kpi
           label="Portfolio risk index"
           value={String(insights.portfolioRiskIndex)}
-          hint="0-100 blended risk across all categories"
+          hint="0–100 blended score"
         />
         <Kpi
-          label="Total annual service opportunity"
+          label="Annual service opportunity"
           value={`$${insights.totalAnnualServiceUsd.toLocaleString()}`}
-          hint="Sum across filtered cohort"
+          hint="Total across cohort"
         />
       </section>
 
@@ -240,12 +241,12 @@ function CommunityTab({ filtered, selectedId, setSelectedId, insights }) {
         </div>
       </section>
 
-      <section aria-labelledby="inventory-heading">
+      <section aria-labelledby="inventory-heading" className="-mt-4">
         <h2 id="inventory-heading" className="font-display text-lg font-semibold text-ink">
           Home inventory
         </h2>
         <p className="mt-1 text-sm text-muted">
-          Select a tile to open the full system-of-record view for that home.
+          Select a home to view its full record.
         </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((h) => (
@@ -258,6 +259,8 @@ function CommunityTab({ filtered, selectedId, setSelectedId, insights }) {
           ))}
         </div>
       </section>
+
+      <CommunityMarketplacePreview />
     </>
   )
 }
@@ -289,11 +292,8 @@ function BridgeTab({ filtered, insights, homebridge, dealer, scoreRows }) {
         {/* HomeBridge: savings modeling */}
         <section className="rounded-2xl border border-orange-200/30 bg-elevated p-6 ring-1 ring-orange-100/40">
           <h2 className="font-display text-lg font-semibold text-ink">
-            Homeowner savings outlook
+            Savings outlook
           </h2>
-          <p className="mt-1 text-xs text-muted">
-            Energy, insurance, and maintenance modeled from equipment stress and opportunity value.
-          </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <Kpi
               label="Annual energy savings"
@@ -320,7 +320,7 @@ function BridgeTab({ filtered, insights, homebridge, dealer, scoreRows }) {
               <p className="font-display mt-1 text-3xl font-semibold text-ink">
                 {homebridge.upgradeReadinessIndex}
               </p>
-              <p className="mt-1 text-xs text-muted">0-100 cohort index from system mix</p>
+              <p className="mt-1 text-xs text-muted">Cohort index (0–100)</p>
             </div>
             <div className="rounded-xl bg-accent-soft/80 p-4 ring-1 ring-orange-200/60">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-rust">
@@ -329,9 +329,7 @@ function BridgeTab({ filtered, insights, homebridge, dealer, scoreRows }) {
               <p className="font-display mt-1 text-3xl font-semibold text-ink">
                 {homebridge.valueUpliftIndex}
               </p>
-              <p className="mt-1 text-xs text-muted">
-                Modeled from hardware backlog x demand index
-              </p>
+              <p className="mt-1 text-xs text-muted">Hardware backlog &times; demand</p>
             </div>
           </div>
         </section>
@@ -339,15 +337,12 @@ function BridgeTab({ filtered, insights, homebridge, dealer, scoreRows }) {
         {/* DealerBridge: lead scoring */}
         <section className="rounded-2xl border border-orange-200/30 bg-elevated p-6 ring-1 ring-orange-100/40">
           <h2 className="font-display text-lg font-semibold text-ink">
-            Contractor lead scoring
+            Lead scoring
           </h2>
-          <p className="mt-1 text-xs text-muted">
-            Lead tiers and qualified counts. Scores drive routing priority.
-          </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <Kpi label="Mean Smart Score" value={dealer.meanSmartScore} />
             <Kpi label="Qualified homes" value={`${dealer.qualifiedHomes}`} hint="Score >= 62" />
-            <Kpi label="Reactivation candidates" value={`${dealer.reactivationCandidates}`} hint="Aging systems + service history" />
+            <Kpi label="Reactivation candidates" value={`${dealer.reactivationCandidates}`} hint="Aging systems, past service" />
             <div className="rounded-xl border border-orange-200/30 bg-elevated/95 p-3 ring-1 ring-orange-100/40">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-muted">Tier distribution</p>
               <div className="mt-2 flex gap-2">
@@ -373,7 +368,7 @@ function BridgeTab({ filtered, insights, homebridge, dealer, scoreRows }) {
             Per-home Smart Score
           </h2>
           <p className="text-xs text-muted">
-            {WILLOWBROOK.name} &middot; sorted by score. Links open full home record.
+            {WILLOWBROOK.name} &middot; sorted by score
           </p>
         </div>
         <div className="overflow-x-auto">
@@ -383,7 +378,7 @@ function BridgeTab({ filtered, insights, homebridge, dealer, scoreRows }) {
                 <th className="px-4 py-3">Address</th>
                 <th className="px-4 py-3">Tier</th>
                 <th className="px-4 py-3">Score</th>
-                <th className="px-4 py-3">Service opp. / yr</th>
+                <th className="px-4 py-3">Annual value</th>
                 <th className="px-4 py-3" />
               </tr>
             </thead>
@@ -442,7 +437,7 @@ function PartnerTab({ market, candidates, tamUsd, serviceAttach }) {
             ${tamUsd.toLocaleString()}
           </p>
           <p className="mt-1 text-xs text-muted">
-            Rough install TAM at ~$3.2k &times; homes with strong retrofit fit score (&ge;55).
+            Based on ~$3.2k install cost &times; homes with a fit score of 55 or higher.
           </p>
         </div>
         <div className="rounded-2xl border border-orange-200/30 bg-elevated p-6 ring-1 ring-orange-100/40">
@@ -453,50 +448,49 @@ function PartnerTab({ market, candidates, tamUsd, serviceAttach }) {
             {serviceAttach}%
           </p>
           <p className="mt-1 text-xs text-muted">
-            Share of homes where cross-sell model fires (fit score &ge;45).
+            Percentage of homes eligible for a bundled service (fit score 45+).
           </p>
         </div>
       </section>
 
       <section className="rounded-2xl border border-orange-200/30 bg-surface/50 p-6 ring-1 ring-orange-100/40">
         <h2 className="font-display text-lg font-semibold text-ink">
-          Why {BRAND.product} shows up here
+          Why {BRAND.product} is recommended
         </h2>
         <p className="mt-2 text-sm text-muted">
-          The same equipment graph that powers homeowner insights feeds a partner rule: flag
-          tank water heaters beyond efficient mid-life, especially when health scores fall or
-          legacy HVAC refrigerant increases whole-home project bundling.
+          Cortex flags tank water heaters that are past their efficient mid-life, especially
+          when health scores are declining or the home still runs R-22 refrigerant (which makes
+          whole-home upgrade bundling more practical).
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted">
           <li>
-            <span className="font-medium text-ink">Recommendation</span>: prioritized for
-            homes with tank WH age &ge;7 yr and/or health &lt;68%, aligned with Meridian phase I
-            install years (2015-2021).
+            <span className="font-medium text-ink">Who it's for</span>: homes with a tank
+            water heater 7+ years old and/or below 68% health, matching Meridian phase I
+            install years (2015–2021).
           </li>
           <li>
-            <span className="font-medium text-ink">Homeowner downside of waiting</span>:{' '}
-            higher standby losses, tank failure risk (water damage), cold-shock complaints, and
-            lost utility rebates when equipment fails on emergency timeline vs. planned retrofit.
+            <span className="font-medium text-ink">Cost of waiting</span>:{' '}
+            higher energy waste, increased tank failure risk (potential water damage), and
+            missed utility rebates if the unit fails before a planned replacement.
           </li>
           <li>
-            <span className="font-medium text-ink">Market motion</span>: annual service
+            <span className="font-medium text-ink">Market context</span>: total annual service
             opportunity across the subdivision is{' '}
             <span className="text-ink">
               ${market.totalAnnualServiceUsd.toLocaleString()}
             </span>{' '}
-            (all categories); utilities category pipeline helps time OEM promos with HVAC
-            replacements.
+            across all categories.
           </li>
         </ul>
       </section>
 
       <section>
         <h2 className="font-display text-lg font-semibold text-ink">
-          Homes where {BRAND.name} is modeled as top recommendation
+          Top candidates for {BRAND.name}
         </h2>
         <p className="mt-1 text-sm text-muted">
-          Fit score blends tank age, health, and bundling signals. &ldquo;Portfolio risk&rdquo; is the
-          same 0-100 index used on the analytics tab for that home.
+          Fit score is based on tank age, health, and whether other upgrades are also due.
+          Portfolio risk uses the same 0–100 scale as the analytics tab.
         </p>
         <div className="mt-4 overflow-hidden overflow-x-auto rounded-2xl border border-orange-200/30 bg-elevated ring-1 ring-orange-100/40">
           <table className="w-full min-w-[640px] text-left text-sm">

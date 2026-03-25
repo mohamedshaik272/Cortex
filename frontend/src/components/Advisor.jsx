@@ -48,17 +48,19 @@ export default function Advisor() {
     <div className="flex h-svh flex-col overflow-hidden bg-canvas font-sans text-ink antialiased">
       <Header />
 
+      <div className="shrink-0 bg-paper/80 px-4 py-6 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h1 className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+            Advisor
+          </h1>
+          <p className="mt-1 text-sm text-muted">
+            Ask anything about your home: maintenance, warranties, service history, and more.
+          </p>
+        </div>
+      </div>
+
       <main className="flex min-h-0 flex-1 flex-col px-4 sm:px-6">
         <div className="mx-auto flex w-full min-h-0 max-w-6xl flex-1 flex-col py-6">
-          {/* Page Header */}
-          <div className="mb-6 shrink-0">
-            <h1 className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-              Advisor
-            </h1>
-            <p className="mt-2 text-sm text-muted">
-              Ask anything about your home: maintenance, warranties, service history, and more.
-            </p>
-          </div>
 
           {/* Chat layout */}
           <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-orange-200/30 bg-elevated ring-1 ring-orange-100/40 lg:flex-row">
@@ -85,13 +87,14 @@ export default function Advisor() {
               <button
                 type="button"
                 onClick={() => setShowTrace(!showTrace)}
-                className="flex w-full items-center justify-between rounded-xl border border-orange-200/30 bg-elevated px-4 py-3 text-sm font-medium text-ink ring-1 ring-orange-100/40 transition-colors cursor-pointer"
+                aria-expanded={showTrace}
+                className="flex w-full items-center justify-between rounded-xl border border-orange-200/30 bg-elevated px-4 py-3 text-sm font-medium text-ink ring-1 ring-orange-100/40 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
                 <span className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-accent" style={{ fontSize: '18px' }}>timeline</span>
+                  <span className="material-symbols-outlined text-accent" style={{ fontSize: '18px' }} aria-hidden="true">timeline</span>
                   Activity · {reasoningSteps.length} steps
                 </span>
-                <span className="material-symbols-outlined text-muted" style={{ fontSize: '18px' }}>
+                <span className="material-symbols-outlined text-muted" style={{ fontSize: '18px' }} aria-hidden="true">
                   {showTrace ? 'expand_less' : 'expand_more'}
                 </span>
               </button>

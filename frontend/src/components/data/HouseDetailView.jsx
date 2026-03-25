@@ -18,6 +18,7 @@ function Section({ icon, title, children }) {
         <span
           className="material-symbols-outlined text-accent"
           style={{ fontSize: '20px' }}
+          aria-hidden="true"
         >
           {icon}
         </span>
@@ -96,6 +97,7 @@ function MaintenanceSection({ events }) {
             <span
               className="material-symbols-outlined text-muted"
               style={{ fontSize: '18px' }}
+              aria-hidden="true"
             >
               {e.type === 'inspection'
                 ? 'search'

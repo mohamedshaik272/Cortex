@@ -34,11 +34,10 @@ export default function Hero() {
           A complete understanding of every home
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-          Cortex turns scattered facts (appliance age, maintenance history,
-          utilities, climate exposure, repairs, and specs) into a{" "}
-          <span className="font-medium text-ink">living system of record</span>{" "}
-          that interprets context, surfaces risk, and recommends what to do
-          next.
+          Cortex brings your home's full picture into{" "}
+          <span className="font-medium text-ink">one place</span> — appliances,
+          maintenance, warranties, climate, and costs — so you always know
+          what needs attention and what to do next.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a href="#explore" className="btn-primary">

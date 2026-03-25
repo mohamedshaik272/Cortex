@@ -1,6 +1,6 @@
 import { satelliteTileImageUrl } from '../lib/mapTiles';
 
-/** Single-builder tract — Meridian Homes at Willowbrook Estates (demo) */
+/** Single-builder tract — Meridian Homes at Willowbrook Estates */
 
 export const WILLOWBROOK = {
   name: 'Willowbrook Estates',
@@ -163,7 +163,7 @@ function buildHome(spec) {
   };
 }
 
-/** 14 lots — Meridian Homes, phase I (demo cohort) */
+/** 14 lots — Meridian Homes, phase I */
 const LOTS = [
   { id: 'wb-01', address: '18402 Willow Trace Terr', lat: 39.1425911, lng: -77.2357993, planName: 'Cambridge', block: 'A', lot: '12', beds: 4, baths: 3, sqft: 2680, yearBuilt: 2019, annualServiceValue: 11200, demandIndex: 0.81, wh: { brand: 'Rheem', model: 'PROG50-40N', ageYears: 5, healthPct: 82 }, hvac: { ageYears: 5, refrigerant: 'R-410A', systemType: 'Heat pump (ducted)' }, roof: { ageYears: 5, condition: 'good' }, electric: { panelAmps: 200, panelAgeYears: 5 }, plumbing: { ageYears: 5, knownIssues: '' }, extraRepairs: 0 },
   { id: 'wb-02', address: '18408 Willow Trace Terr', lat: 39.1424965, lng: -77.235239, planName: 'Cambridge', block: 'A', lot: '13', beds: 4, baths: 3, sqft: 2680, yearBuilt: 2019, annualServiceValue: 10800, demandIndex: 0.79, wh: { brand: 'Rheem', model: 'PROG50-40N', ageYears: 5, healthPct: 80 }, hvac: { ageYears: 5, refrigerant: 'R-410A', systemType: 'Heat pump (ducted)' }, roof: { ageYears: 5, condition: 'good' }, electric: { panelAmps: 200, panelAgeYears: 5 }, plumbing: { ageYears: 5, knownIssues: '' }, extraRepairs: 1 },

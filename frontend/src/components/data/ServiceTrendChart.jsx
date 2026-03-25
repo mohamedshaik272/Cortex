@@ -7,7 +7,7 @@ const SEASONAL_CURVE = [0.75, 0.78, 0.92, 1.08, 1.15, 1.18, 1.14, 1.10, 1.02, 0.
 
 const CHART_WIDTH = 600
 const CHART_HEIGHT = 220
-const MARGIN = { top: 10, right: 20, bottom: 30, left: 50 }
+const MARGIN = { top: 10, right: 20, bottom: 24, left: 44 }
 const PLOT_W = CHART_WIDTH - MARGIN.left - MARGIN.right
 const PLOT_H = CHART_HEIGHT - MARGIN.top - MARGIN.bottom
 
@@ -76,7 +76,7 @@ export default function ServiceTrendChart({ insights, homebridge }) {
         12-month service opportunity projection
       </h3>
       <p className="mt-1 text-xs text-muted">
-        Cumulative monthly value based on portfolio risk and seasonal demand curves
+        Cumulative value over 12 months, adjusted for seasonal demand
       </p>
 
       <svg
@@ -108,7 +108,7 @@ export default function ServiceTrendChart({ insights, homebridge }) {
               y={toY(val) + 4}
               textAnchor="end"
               fill="#6b5d4d"
-              fontSize={11}
+              fontSize={9}
               fontFamily="DM Sans, sans-serif"
             >
               {formatDollar(val)}

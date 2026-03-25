@@ -11,7 +11,7 @@ function KpiCard({ label, value, hint }) {
 }
 
 export default function InsightsDeck({ insights }) {
-  const [openMethod, setOpenMethod] = useState(true)
+  const [openMethod, setOpenMethod] = useState(false)
   const maxCat = useMemo(
     () => Math.max(1, ...insights.categoryRisks.map((c) => c.score)),
     [insights.categoryRisks],
@@ -24,47 +24,33 @@ export default function InsightsDeck({ insights }) {
   if (insights.homeCount === 0) {
     return (
       <section className="rounded-2xl border border-dashed border-orange-200/30 bg-surface/40 p-6 text-center text-sm text-muted">
-        No homes match the current filters. Widen search or clear filters to see subdivision
-        analytics.
+        No homes match the current filters. Adjust filters to see analytics.
       </section>
     )
   }
 
   return (
-    <section className="space-y-6" aria-labelledby="insights-heading">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h2 id="insights-heading" className="font-display text-lg font-semibold text-ink">
-            Market intelligence
-          </h2>
-          <p className="mt-0.5 text-sm text-muted">
-            Cohort-level signals from{' '}
-            <span className="font-medium text-ink">{insights.homeCount}</span> homes.
-            Updates when filters change.
-          </p>
-        </div>
-      </div>
-
+    <section className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard
-          label="Total annual service opportunity"
+          label="Annual service opportunity"
           value={`$${insights.totalAnnualServiceUsd.toLocaleString()}`}
-          hint="Sum of predicted annual product + maintenance + service value"
+          hint="Total across filtered cohort"
         />
         <KpiCard
           label="Mean per home"
           value={`$${insights.meanAnnualServiceUsd.toLocaleString()}`}
-          hint="Average opportunity within filtered cohort"
+          hint="Average per home"
         />
         <KpiCard
           label="Portfolio risk index"
           value={`${insights.portfolioRiskIndex}`}
-          hint="0\u2013100 weighted blend of maintenance, hardware, appliances, utilities"
+          hint="0–100 blended score"
         />
         <KpiCard
           label="Homes in cohort"
           value={String(insights.homeCount)}
-          hint="Filtered set. Map markers and tiles use the same set"
+          hint="Matches current filters"
         />
       </div>
 
@@ -73,9 +59,6 @@ export default function InsightsDeck({ insights }) {
           <h3 className="font-display text-lg font-semibold text-ink">
             Category risk profile
           </h3>
-          <p className="mt-1 text-xs text-muted">
-            Per-category scores aggregate per-home urgency (0\u2013100), then average across the cohort.
-          </p>
           <ul className="mt-4 space-y-4">
             {insights.categoryRisks.map((c) => (
               <li key={c.category}>
@@ -90,8 +73,7 @@ export default function InsightsDeck({ insights }) {
                   />
                 </div>
                 <p className="mt-1 text-[11px] text-muted">
-                  {c.homesAtRisk} homes at or above urgent threshold \u00b7 24-mo pipeline ~$
-                  {c.pipelineUsd24mo.toLocaleString()}
+                  {c.homesAtRisk} urgent &middot; ~${c.pipelineUsd24mo.toLocaleString()} pipeline (24 mo)
                 </p>
               </li>
             ))}
@@ -102,10 +84,6 @@ export default function InsightsDeck({ insights }) {
           <h3 className="font-display text-lg font-semibold text-ink">
             Replacement & repair pipeline
           </h3>
-          <p className="mt-1 text-xs text-muted">
-            Rule-based counts from equipment age, health, and refrigerant class. Dollar estimates are
-            modeled per category.
-          </p>
           <ul className="mt-4 space-y-3">
             {insights.pipeline.map((p) => (
               <li
@@ -146,30 +124,13 @@ export default function InsightsDeck({ insights }) {
           <span className="text-muted">{openMethod ? '\u2212' : '+'}</span>
         </button>
         {openMethod ? (
-          <div className="mt-4 space-y-3 text-sm text-muted">
-            <p>
-              <strong className="text-ink">Maintenance risk:</strong> weighted blend of roof age
-              and condition, plumbing age and known issues, repair frequency in the maintenance
-              record, and climate exposure index.
-            </p>
-            <p>
-              <strong className="text-ink">Hardware:</strong> electrical panel age and
-              capacity headroom vs. roof structural cycle signals for major capital events.
-            </p>
-            <p>
-              <strong className="text-ink">Appliances:</strong> mean appliance age and count of
-              units below a health threshold (proxy for failure probability).
-            </p>
-            <p>
-              <strong className="text-ink">Utilities:</strong> water heater age and health,
-              HVAC age and refrigerant class (legacy R-22 drives higher replacement pressure), and
-              panel load context.
-            </p>
-            <p>
-              <strong className="text-ink">Portfolio risk index:</strong> weighted average of
-              the four category scores (0.28 / 0.22 / 0.22 / 0.28) across the filtered cohort.
-            </p>
-          </div>
+          <ul className="mt-4 space-y-2 text-sm text-muted">
+            <li><strong className="text-ink">Maintenance:</strong> Roof age/condition, plumbing issues, repair frequency, climate exposure.</li>
+            <li><strong className="text-ink">Hardware:</strong> Electrical panel age, capacity headroom, structural cycle signals.</li>
+            <li><strong className="text-ink">Appliances:</strong> Mean age and count of units below health threshold.</li>
+            <li><strong className="text-ink">Utilities:</strong> Water heater and HVAC age/health, refrigerant class, panel load.</li>
+            <li><strong className="text-ink">Portfolio risk:</strong> Weighted average of four category scores (0.28 / 0.22 / 0.22 / 0.28).</li>
+          </ul>
         ) : null}
       </div>
     </section>

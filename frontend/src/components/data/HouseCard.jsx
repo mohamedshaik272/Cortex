@@ -37,7 +37,7 @@ export default function HouseCard({ house, isSelected, onSelect, detailHref }) {
         <span className="ml-1 font-normal text-muted">/yr</span>
       </p>
       <p className="mt-0.5 text-xs text-muted">
-        Estimated annual service value
+        Annual service value
       </p>
       <p className="mt-1 text-sm text-muted">
         {house.beds} bds &middot; {house.baths} ba &middot; {house.sqft.toLocaleString()} sqft
@@ -46,7 +46,7 @@ export default function HouseCard({ house, isSelected, onSelect, detailHref }) {
       <p className="mt-0.5 text-xs text-muted">{house.homeType}</p>
       {detailHref ? (
         <p className="mt-2 text-xs font-medium text-accent">
-          View full home record &rarr;
+          View home &rarr;
         </p>
       ) : null}
     </Tag>

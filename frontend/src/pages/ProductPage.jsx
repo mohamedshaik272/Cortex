@@ -7,9 +7,9 @@ const FEATURES = [
     icon: 'home',
     title: 'Homeowner intelligence',
     description:
-      'Health score, alerts, maintenance horizon, and system-level detail for every home. All interpreted from actual equipment, service, and climate data.',
+      'Health scores, alerts, upcoming maintenance, and detailed system breakdowns for every home — built from real equipment, service, and climate data.',
     stat: '86 / 100',
-    statLabel: 'sample health score',
+    statLabel: 'health score',
     to: '/my-home',
     cta: 'Open my home',
   },
@@ -17,7 +17,7 @@ const FEATURES = [
     icon: 'analytics',
     title: 'Subdivision analytics',
     description:
-      'Risk profiles, replacement pipelines, and lead scoring across entire communities. Filter by plan, age, or equipment to find the signal.',
+      'See risk profiles, replacement timelines, and service opportunities across entire neighborhoods. Filter by floor plan, age, or equipment type.',
     stat: '14',
     statLabel: 'homes tracked',
     to: '/data',
@@ -27,9 +27,9 @@ const FEATURES = [
     icon: 'forum',
     title: 'AI advisor',
     description:
-      'Ask questions about your home in plain language. Get answers grounded in your actual equipment, warranties, and maintenance history.',
+      'Ask anything about your home in plain English — maintenance schedules, warranty coverage, repair history, costs. Answers are based on your actual data.',
     stat: 'Live',
-    statLabel: 'context-aware chat',
+    statLabel: 'home-aware chat',
     to: '/advisor',
     cta: 'Talk to Cortex',
   },
@@ -48,11 +48,10 @@ export default function ProductPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10">
             <h2 className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-              Three pillars of home intelligence
+              What Cortex does
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-muted">
-              Each view works from the same system of record: equipment,
-              maintenance, climate, and cost data for every home.
+              Three ways to use Cortex, whether you own a home, service homes, or sell into them.
             </p>
           </div>
 
@@ -97,7 +96,7 @@ export default function ProductPage() {
       <footer className="border-t border-orange-200/20 bg-paper/30 px-4 py-6 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted">
-            Cortex &mdash; an intelligence layer for home ownership.
+            Cortex &mdash; the smart layer for homeownership.
           </p>
           <p className="text-xs text-muted">
             &copy; {new Date().getFullYear()} Cortex

@@ -87,7 +87,7 @@ export default function Header({ children }) {
                 end={end}
                 ref={(el) => (linkRefs.current[i] = el)}
                 className={({ isActive }) =>
-                  `relative z-10 rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-300 ${
+                  `relative z-10 rounded-full px-4 py-2.5 text-sm font-medium transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                     isActive ? "text-accent" : "text-muted hover:text-ink"
                   }`
                 }

@@ -15,7 +15,8 @@ export default function DataSubnav({ activeTab, onTabChange }) {
           key={key}
           type="button"
           onClick={() => onTabChange(key)}
-          className={`rounded-lg px-3 py-1.5 text-sm font-medium transition cursor-pointer ${
+          aria-current={activeTab === key ? 'page' : undefined}
+          className={`rounded-full px-3 py-1.5 text-sm font-medium transition cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
             activeTab === key
               ? 'bg-elevated text-ink ring-1 ring-orange-200/40'
               : 'text-muted hover:text-ink'

@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import HouseDetailView from '../components/data/HouseDetailView';
+import { MarketplaceListingsSection } from '../components/data/MarketplaceListingsSection';
 import { getWillowbrookHome } from '../data/willowbrookDemo';
 
 export default function HomeDetailPage() {
@@ -24,6 +25,10 @@ export default function HomeDetailPage() {
 
               <div className="mt-6">
                 <HouseDetailView house={home} locationContext="Willowbrook Estates" />
+              </div>
+
+              <div className="mt-8">
+                <MarketplaceListingsSection house={home} />
               </div>
             </>
           ) : (

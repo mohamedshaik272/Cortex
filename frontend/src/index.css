@@ -20,7 +20,7 @@ body {
   }
 
   .btn-ghost {
-    @apply text-sm font-semibold text-accent hover:text-terracotta transition-colors cursor-pointer;
+    @apply text-sm font-semibold text-accent hover:text-terracotta transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
   }
 }
 
